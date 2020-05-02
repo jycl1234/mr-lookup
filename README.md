@@ -1,24 +1,5 @@
 # fgo-lookup
 
-## Project setup
-```
-yarn install
-```
+Simple web-based tool to look up Fate Grand/Order crowd-sourced dropsheet data.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Dropsheet is here: https://docs.google.com/spreadsheets/d/1_SlTjrVRTgHgfS7sRqx4CeJMqlz687HdSlYqiW-JvQA/edit#gid=843570146
