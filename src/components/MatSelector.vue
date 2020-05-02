@@ -1,23 +1,23 @@
 <template>
   <select v-on:change="handleChange($event)">
     <option
-      v-for="sheet in sheetIds"
-      v-bind:key="sheet.sheetId"
-      v-bind:value="sheet.sheetUrl"
-      >{{ sheet.title }}</option
+      v-for="mat in mats"
+      v-bind:key="mat.name"
+      v-bind:value="mat.startRange + ':' + mat.endRange"
+      >{{ mat.name }}</option
     >
   </select>
 </template>
 
 <script>
-import { sheetIds } from "../sheets";
+import { mats } from "../mats";
 
 export default {
-  name: "SheetSelector",
+  name: "MatSelector",
   components: {},
   data() {
     return {
-      sheetIds,
+      mats,
     };
   },
   methods: {
