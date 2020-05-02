@@ -65,6 +65,7 @@ export default {
         alert("Please select a mat.");
       }
       if (errors === 0) {
+        this.results = null;
         this.isLoading = true;
         const url = `${baseUrl}${spreadsheetId}/values/${this.sheetUrl}!${this.matRange}?key=${apiKey}`;
         axios
@@ -101,7 +102,7 @@ export default {
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 50%;
+  width: 70%;
   max-width: 70rem;
   height: 28rem;
   text-align: center;
