@@ -3,27 +3,11 @@
     <h1>FGO Dropsheet Lookup Tool</h1>
     <div class="row">
       <div class="col-sm-12 col-lg-6">
-        <div class="container--sheet-selector">
-          <select v-model="sheetUrl">
-            <option
-              v-for="sheet in sheetIds"
-              v-bind:key="sheet.sheetId"
-              v-bind:value="sheet.sheetUrl"
-            >{{ sheet.title }}</option>
-          </select>
-        </div>
+        <SheetSelector v-on:handle-sheet-select="handleSheetSelect" />
       </div>
       <div class="row">
         <div class="col-sm-12 col-lg-6">
-          <div class="container--mat-selector">
-            <select v-model="matRange">
-              <option
-                v-for="mat in mats"
-                v-bind:key="mat.startRange + ':' + mat.endRange"
-                v-bind:value="mat.startRange + ':' + mat.endRange"
-              >{{ mat.name }}</option>
-            </select>
-          </div>
+          <MatSelector v-on:handle-mat-select="handleMatSelect" />
         </div>
         <div class="col-sm-12 container--button">
           <button class="button--submit" type="button" v-on:click="handleSubmit()">search</button>
@@ -43,11 +27,13 @@ import axios from "axios";
 import { baseUrl, spreadsheetId, apiKey } from "../constants";
 import { sheetIds } from "../sheets";
 import { mats } from "../mats";
+import SheetSelector from "./SheetSelector";
+import MatSelector from "./MatSelector";
 import Results from "./Results";
 
 export default {
   name: "Lookup",
-  components: { Results },
+  components: { SheetSelector, MatSelector, Results },
   data() {
     return {
       sheetIds,
@@ -60,6 +46,12 @@ export default {
     };
   },
   methods: {
+    handleSheetSelect(sheetUrl) {
+      this.sheetUrl = sheetUrl;
+    },
+    handleMatSelect(matRange) {
+      this.matRange = matRange;
+    },
     handleSubmit() {
       let errors = 0;
       if (!this.sheetUrl) {
@@ -79,6 +71,7 @@ export default {
           .then(res => {
             this.isLoading = false;
             this.results = res.data.values;
+            console.log(res.data.values);
             const { range } = res.data;
             if (range.indexOf("JP") > -1) {
               this.region = "JP";
@@ -119,17 +112,6 @@ export default {
     margin-top: 4rem;
     font-size: 2rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  }
-  .container--sheet-selector,
-  .container--mat-selector {
-    margin-bottom: 1rem;
-    select {
-      width: 100%;
-      font-size: 1rem;
-      @media (min-width: 992px) {
-        width: 70%;
-      }
-    }
   }
   .container--button {
     display: flex;
