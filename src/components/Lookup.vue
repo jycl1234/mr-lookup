@@ -9,8 +9,7 @@
               v-for="sheet in sheetIds"
               v-bind:key="sheet.sheetId"
               v-bind:value="sheet.sheetUrl"
-              >{{ sheet.title }}</option
-            >
+            >{{ sheet.title }}</option>
           </select>
         </div>
       </div>
@@ -22,30 +21,19 @@
                 v-for="mat in mats"
                 v-bind:key="mat.startRange + ':' + mat.endRange"
                 v-bind:value="mat.startRange + ':' + mat.endRange"
-                >{{ mat.name }}</option
-              >
+              >{{ mat.name }}</option>
             </select>
           </div>
         </div>
         <div class="col-sm-12 container--button">
-          <button
-            class="button--submit"
-            type="button"
-            v-on:click="handleSubmit()"
-          >
-            search
-          </button>
-          <button
-            class="button--reset"
-            type="button"
-            v-on:click="handleReset()"
-          >
-            reset
-          </button>
+          <button class="button--submit" type="button" v-on:click="handleSubmit()">search</button>
+          <button class="button--reset" type="button" v-on:click="handleReset()">reset</button>
         </div>
       </div>
     </div>
-    <div v-if="isLoading" class="overlay--loading"><span>loading...</span></div>
+    <div v-if="isLoading" class="overlay--loading">
+      <span>loading...</span>
+    </div>
     <Results :results="results" :region="region" />
   </div>
 </template>
@@ -68,7 +56,7 @@ export default {
       matRange: ":",
       results: null,
       region: null,
-      isLoading: false,
+      isLoading: false
     };
   },
   methods: {
@@ -88,7 +76,7 @@ export default {
         const url = `${baseUrl}${spreadsheetId}/values/${this.sheetUrl}!${this.matRange}?key=${apiKey}`;
         axios
           .get(url)
-          .then((res) => {
+          .then(res => {
             this.isLoading = false;
             this.results = res.data.values;
             const { range } = res.data;
@@ -98,7 +86,7 @@ export default {
               this.region = "NA";
             }
           })
-          .catch((err) => {
+          .catch(err => {
             this.isLoading = false;
             alert("Error loading data.");
             console.log(err);
@@ -107,8 +95,8 @@ export default {
     },
     handleReset() {
       this.results = null;
-    },
-  },
+    }
+  }
 };
 </script>
 
