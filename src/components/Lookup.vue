@@ -1,24 +1,32 @@
 <template>
-  <div>
+  <div class="container container--lookup">
     <h1>FGO Dropsheet Lookup Tool</h1>
-    <select v-model="sheetUrl">
-      <option
-        v-for="sheet in sheetIds"
-        v-bind:key="sheet.sheetId"
-        v-bind:value="sheet.sheetUrl"
-        >{{ sheet.title }}</option
-      >
-    </select>
-    <select v-model="matRange">
-      <option
-        v-for="mat in mats"
-        v-bind:key="mat.startRange + ':' + mat.endRange"
-        v-bind:value="mat.startRange + ':' + mat.endRange"
-        >{{ mat.name }}</option
-      >
-    </select>
-    <button type="button" v-on:click="handleSubmit()">search</button>
-    <button type="button" v-on:click="handleReset()">reset</button>
+    <div class="container--sheet-selector">
+      <select v-model="sheetUrl">
+        <option
+          v-for="sheet in sheetIds"
+          v-bind:key="sheet.sheetId"
+          v-bind:value="sheet.sheetUrl"
+          >{{ sheet.title }}</option
+        >
+      </select>
+    </div>
+    <div class="container--mat-selector">
+      <select v-model="matRange">
+        <option
+          v-for="mat in mats"
+          v-bind:key="mat.startRange + ':' + mat.endRange"
+          v-bind:value="mat.startRange + ':' + mat.endRange"
+          >{{ mat.name }}</option
+        >
+      </select>
+    </div>
+    <button class="button--submit" type="button" v-on:click="handleSubmit()">
+      search
+    </button>
+    <button class="button--reset" type="button" v-on:click="handleReset()">
+      reset
+    </button>
     <div v-if="isLoading" class="overlay--loading"><span>loading...</span></div>
     <Results :results="results" :region="region" />
   </div>
@@ -85,4 +93,45 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.container--lookup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50%;
+  max-width: 70rem;
+  height: 28rem;
+  text-align: center;
+  background: rgba(49, 57, 93, 0.7);
+  box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.7);
+  h1 {
+    color: #fff;
+    margin: 1rem 0;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  }
+  .overlay--loading {
+    color: #fff;
+    margin-top: 4rem;
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  }
+  .container--sheet-selector,
+  .container--mat-selector {
+    margin-bottom: 1rem;
+    select {
+      width: 50%;
+      font-size: 1rem;
+    }
+  }
+  .button--submit,
+  .button--reset {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    padding: 0.25rem 2rem;
+    border: 1px solid rgba(49, 57, 93);
+  }
+}
+</style>

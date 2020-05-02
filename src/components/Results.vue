@@ -1,5 +1,5 @@
 <template>
-  <div class="results">
+  <div class="container--results">
     <table v-if="results">
       <thead>
         <tr>
@@ -42,4 +42,13 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.container--results {
+  margin-top: 1rem;
+  table {
+    width: 100%;
+    padding: 1rem 1rem 2rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+</style>
