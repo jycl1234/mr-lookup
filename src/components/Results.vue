@@ -1,39 +1,32 @@
 <template>
   <div class="container--results">
-    <table v-if="results">
-      <colgroup>
-        <col span="1" style="width:12%;" />
-        <col span="1" style="width:24%;" />
-        <col span="1" style="width:8%;" />
-        <col span="1" style="width:16%;" />
-        <col span="1" style="width:10%;" />
-        <col span="1" style="width:10%;" />
-        <col span="1" style="width:10%;" />
-      </colgroup>
-      <thead>
-        <tr>
-          <th>Area</th>
-          <th>Quest</th>
-          <th>AP</th>
-          <th v-if="region === 'JP'">BP/AP<br />(1P+1L+1T)</th>
-          <th v-else>BP/AP<br />(1P+2L)</th>
-          <th>Ap/Drop</th>
-          <th>Drop Chance</th>
-          <th>Runs</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="row in results" v-bind:key="row[0]">
-          <td>{{ row[2] }}</td>
-          <td>{{ row[3] }}</td>
-          <td>{{ row[4] }}</td>
-          <td>{{ row[5] }}</td>
-          <td>{{ row[6] }} <span v-if="row[6] !== ''">AP</span></td>
-          <td>{{ row[8] }}<span v-if="row[8] !== ''">%</span></td>
-          <td>{{ row[10] }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="grid" v-if="results">
+      <div class="row grid--row grid--header">
+        <div class="grid--cell col-sm-12 col-lg-2">Area</div>
+        <div class="grid--cell col-sm-12 col-lg-3">Quest</div>
+        <div class="grid--cell col-sm-12 col-lg-1">AP</div>
+        <div class="grid--cell col-sm-12 col-lg-2" v-if="region === 'JP'">
+          BP/AP<br />(1P+1L+1T)
+        </div>
+        <div class="grid--cell col-sm-12 col-lg-1" v-else>
+          BP/AP<br />(1P+2L)
+        </div>
+        <div class="grid--cell col-sm-12 col-lg-1">Ap/Drop</div>
+        <div class="grid--cell col-sm-12 col-lg-1">Drop Chance</div>
+        <div class="grid--cell col-sm-12 col-lg-1">Runs</div>
+      </div>
+      <div class="row grid--row" v-for="row in results" v-bind:key="row[0]">
+        <div class="grid--cell col-sm-12 col-lg-2">{{ row[2] }}</div>
+        <div class="grid--cell col-sm-12 col-lg-3">{{ row[3] }}</div>
+        <div class="grid--cell col-sm-12 col-lg-1">{{ row[4] }}</div>
+        <div class="grid--cell col-sm-12 col-lg-2">{{ row[5] }}</div>
+        <div class="grid--cell col-sm-12 col-lg-1">{{ row[6] }}</div>
+        <div class="grid--cell col-sm-12 col-lg-1">
+          {{ row[8] }}<span v-if="row[8] !== ''">%</span>
+        </div>
+        <div class="grid--cell col-sm-12 col-lg-1">{{ row[10] }}</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -52,13 +45,18 @@ export default {
 <style lang="scss" scoped>
 .container--results {
   margin-top: 1rem;
-  table {
+  .grid {
     font-size: 0.9rem;
     width: 100%;
     padding: 1rem 1rem 2rem 1rem;
     background: rgba(255, 255, 255, 0.7);
-    tr {
-      td {
+    .grid--row {
+      border-bottom: 1px dotted #8f8f8f;
+      margin: 0.2rem 0;
+      &.grid--header {
+        font-weight: bold;
+      }
+      .grid--grid--cell {
         padding: 0 0.1rem;
       }
     }

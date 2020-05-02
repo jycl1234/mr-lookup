@@ -1,32 +1,50 @@
 <template>
   <div class="container container--lookup">
     <h1>FGO Dropsheet Lookup Tool</h1>
-    <div class="container--sheet-selector">
-      <select v-model="sheetUrl">
-        <option
-          v-for="sheet in sheetIds"
-          v-bind:key="sheet.sheetId"
-          v-bind:value="sheet.sheetUrl"
-          >{{ sheet.title }}</option
-        >
-      </select>
+    <div class="row">
+      <div class="col-sm-12 col-lg-6">
+        <div class="container--sheet-selector">
+          <select v-model="sheetUrl">
+            <option
+              v-for="sheet in sheetIds"
+              v-bind:key="sheet.sheetId"
+              v-bind:value="sheet.sheetUrl"
+              >{{ sheet.title }}</option
+            >
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-lg-6">
+          <div class="container--mat-selector">
+            <select v-model="matRange">
+              <option
+                v-for="mat in mats"
+                v-bind:key="mat.startRange + ':' + mat.endRange"
+                v-bind:value="mat.startRange + ':' + mat.endRange"
+                >{{ mat.name }}</option
+              >
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-12 container--button">
+          <button
+            class="button--submit"
+            type="button"
+            v-on:click="handleSubmit()"
+          >
+            search
+          </button>
+          <button
+            class="button--reset"
+            type="button"
+            v-on:click="handleReset()"
+          >
+            reset
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="container--mat-selector">
-      <select v-model="matRange">
-        <option
-          v-for="mat in mats"
-          v-bind:key="mat.startRange + ':' + mat.endRange"
-          v-bind:value="mat.startRange + ':' + mat.endRange"
-          >{{ mat.name }}</option
-        >
-      </select>
-    </div>
-    <button class="button--submit" type="button" v-on:click="handleSubmit()">
-      search
-    </button>
-    <button class="button--reset" type="button" v-on:click="handleReset()">
-      reset
-    </button>
     <div v-if="isLoading" class="overlay--loading"><span>loading...</span></div>
     <Results :results="results" :region="region" />
   </div>
@@ -96,21 +114,16 @@ export default {
 
 <style lang="scss" scoped>
 .container--lookup {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
   width: 70%;
   max-width: 70rem;
-  height: 28rem;
+  height: auto;
   text-align: center;
   background: rgba(49, 57, 93, 0.7);
   box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.7);
+  padding: 2rem;
   h1 {
     color: #fff;
-    margin: 1rem 0;
+    margin: 2rem 0;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
   }
   .overlay--loading {
@@ -123,16 +136,45 @@ export default {
   .container--mat-selector {
     margin-bottom: 1rem;
     select {
-      width: 50%;
+      width: 100%;
       font-size: 1rem;
+      @media (min-width: 992px) {
+        width: 70%;
+      }
+    }
+  }
+  .container--button {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    -webkit-transition: all ease-in-out 0.25s;
+    -o-transition: all ease-in-out 0.25s;
+    transition: all ease-in-out 0.25s;
+    flex-direction: column;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
     }
   }
   .button--submit,
   .button--reset {
     font-size: 1rem;
-    margin: 0 0.5rem;
+    margin: 0.5rem 0.5rem;
     padding: 0.25rem 2rem;
-    border: 1px solid rgba(49, 57, 93);
+    border: 1px solid #fff;
+    background: #193268;
+    color: #fff;
+    -webkit-transition: all ease-in-out 0.25s;
+    -o-transition: all ease-in-out 0.25s;
+    transition: all ease-in-out 0.25s;
+    &:hover {
+      border: 1px solid #193268;
+      background: #fff;
+      color: #193268;
+    }
+    @media (min-width: 992px) {
+      margin-bottom: 0 0.5rem;
+    }
   }
 }
 </style>

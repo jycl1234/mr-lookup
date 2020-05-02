@@ -21,20 +21,25 @@ export default {
   margin: 0;
   padding: 0;
 }
+
 html,
-body,
-#app {
+body {
   height: 100%;
   width: 100%;
 }
+html {
+  font-size: 1rem !important;
+  line-height: 1.4rem !important;
+}
 html * {
-  font-family: "Quicksand", Arial, sans-serif;
+  font-family: "Quicksand", Arial, sans-serif !important;
 }
 #app {
-  line-height: 1.4;
   background-image: url("./assets/chaldea-wp.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  padding: 2rem;
+  min-height: 100%;
 }
 </style>
