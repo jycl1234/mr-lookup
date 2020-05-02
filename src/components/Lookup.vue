@@ -19,6 +19,7 @@
     </select>
     <button type="button" v-on:click="handleSubmit()">search</button>
     <button type="button" v-on:click="handleReset()">reset</button>
+    <div v-if="isLoading" class="overlay--loading"><span>loading...</span></div>
     <Results :results="results" :region="region" />
   </div>
 </template>
@@ -41,6 +42,7 @@ export default {
       matRange: ":",
       results: null,
       region: null,
+      isLoading: false,
     };
   },
   methods: {
@@ -55,12 +57,12 @@ export default {
         alert("Please select a mat.");
       }
       if (errors === 0) {
+        this.isLoading = true;
         const url = `${baseUrl}${spreadsheetId}/values/${this.sheetUrl}!${this.matRange}?key=${apiKey}`;
-        console.log(url);
         axios
           .get(url)
           .then((res) => {
-            console.log(res.data);
+            this.isLoading = false;
             this.results = res.data.values;
             const { range } = res.data;
             if (range.indexOf("JP") > -1) {
@@ -69,7 +71,11 @@ export default {
               this.region = "NA";
             }
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            this.isLoading = false;
+            alert("Error loading data.");
+            console.log(err);
+          });
       }
     },
     handleReset() {

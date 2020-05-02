@@ -21,8 +21,8 @@
           <td>{{ row[3] }}</td>
           <td>{{ row[4] }}</td>
           <td>{{ row[5] }}</td>
-          <td>{{ row[6] }} AP</td>
-          <td>{{ row[8] }}%</td>
+          <td>{{ row[6] }} <span v-if="row[6] !== ''">AP</span></td>
+          <td>{{ row[8] }}<span v-if="row[8] !== ''">%</span></td>
           <td>{{ row[10] }}</td>
         </tr>
       </tbody>
@@ -37,6 +37,7 @@ export default {
     results: {
       type: Array,
     },
+    region: String,
   },
 };
 </script>
