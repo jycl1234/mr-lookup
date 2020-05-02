@@ -5,15 +5,12 @@
         <div class="grid--cell col-sm-12 col-lg-2">Area</div>
         <div class="grid--cell col-sm-12 col-lg-3">Quest</div>
         <div class="grid--cell col-sm-12 col-lg-1">AP</div>
-        <div class="grid--cell col-sm-12 col-lg-1" v-if="region === 'JP'">
+        <div class="grid--cell col-sm-12 col-lg-1">
           BP/AP
-          <br />(1P+1L+1T)
+          <span class="info" v-if="region === 'JP'" v-tooltip="jpMsg">(!)</span
+          ><span v-else class="info" v-tooltip="naMsg">(!)</span>
         </div>
-        <div class="grid--cell col-sm-12 col-lg-1" v-else>
-          BP/AP
-          <br />(1P+2L)
-        </div>
-        <div class="grid--cell col-sm-12 col-lg-1">Ap/Drop</div>
+        <div class="grid--cell col-sm-12 col-lg-1">AP/Drop</div>
         <div class="grid--cell col-sm-12 col-lg-2">Drop Chance</div>
         <div class="grid--cell col-sm-12 col-lg-1">Runs</div>
       </div>
@@ -34,14 +31,25 @@
 </template>
 
 <script>
+import Vue from "vue";
+import Vtooltip from "v-tooltip";
+
+Vue.use(Vtooltip);
+
 export default {
   name: "Results",
   props: {
     results: {
-      type: Array
+      type: Array,
     },
-    region: String
-  }
+    region: String,
+  },
+  data() {
+    return {
+      jpMsg: "1P+1L+1T",
+      naMsg: "1P+2L",
+    };
+  },
 };
 </script>
 
@@ -58,6 +66,13 @@ export default {
       margin: 0.2rem 0;
       &.grid--header {
         font-weight: bold;
+        .info {
+          font-size: 0.8rem;
+          position: absolute;
+          top: -0.06rem;
+          right: -0.3rem;
+          cursor: pointer;
+        }
       }
       .grid--grid--cell {
         padding: 0 0.1rem;
