@@ -17,23 +17,30 @@
         >{{ mat.name }}</option
       >
     </select>
-    <button type="primary" v-on:click="handleSubmit()">search</button>
+    <button type="button" v-on:click="handleSubmit()">search</button>
+    <button type="button" v-on:click="handleReset()">reset</button>
+    <Results :results="results" :region="region" />
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import { baseUrl, spreadsheetId, apiKey } from "../constants";
 import { sheetIds } from "../sheets";
 import { mats } from "../mats";
+import Results from "./Results";
 
 export default {
   name: "Lookup",
+  components: { Results },
   data() {
     return {
       sheetIds,
       mats,
       sheetUrl: "",
       matRange: ":",
+      results: null,
+      region: null,
     };
   },
   methods: {
@@ -50,7 +57,23 @@ export default {
       if (errors === 0) {
         const url = `${baseUrl}${spreadsheetId}/values/${this.sheetUrl}!${this.matRange}?key=${apiKey}`;
         console.log(url);
+        axios
+          .get(url)
+          .then((res) => {
+            console.log(res.data);
+            this.results = res.data.values;
+            const { range } = res.data;
+            if (range.indexOf("JP") > -1) {
+              this.region = "JP";
+            } else {
+              this.region = "NA";
+            }
+          })
+          .catch((err) => console.log(err));
       }
+    },
+    handleReset() {
+      this.results = null;
     },
   },
 };
