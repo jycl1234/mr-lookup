@@ -1,23 +1,9 @@
 <template>
   <div id="app">
-    <Lookup />
+    <div id="nav"></div>
+    <router-view />
   </div>
 </template>
-
-<script>
-// TODO:
-// 1. improve error UX
-// 2. reset button resets all state
-
-import Lookup from "./components/Lookup.vue";
-
-export default {
-  name: "App",
-  components: {
-    Lookup
-  }
-};
-</script>
 
 <style lang="scss">
 * {
