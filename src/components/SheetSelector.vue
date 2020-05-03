@@ -23,10 +23,10 @@ export default {
   data() {
     return {
       sheetIds,
-      sheetUrl: "",
+      sheetUrl: ""
     };
   },
-  methods: {},
+  methods: {}
 };
 </script>
 

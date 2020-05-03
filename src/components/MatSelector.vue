@@ -1,12 +1,16 @@
 <template>
   <div class="container--mat-selector">
-    <select v-model="matRange" v-on:change="$emit('handle-mat-select', $event.target.value)">
+    <select
+      v-model="matRange"
+      v-on:change="$emit('handle-mat-select', $event.target.value)"
+    >
       <option value>-- Select Mat --</option>
       <option
         v-for="mat in filteredMats"
         v-bind:key="mat.startRange + ':' + mat.endRange"
         v-bind:value="mat.startRange + ':' + mat.endRange"
-      >{{ mat.name }}</option>
+        >{{ mat.name }}</option
+      >
     </select>
     <div class="container--mat-filter row">
       <div class="col-xs-12">

@@ -27,7 +27,8 @@
             v-if="row.values[3].hyperlink"
             v-bind:href="row.values[3].hyperlink"
             target="_blank"
-          >{{ row.values[3].formattedValue }}</a>
+            >{{ row.values[3].formattedValue }}</a
+          >
           <span v-else>{{ row.values[3].formattedValue }}</span>
         </div>
         <div class="grid--cell col-sm-12 col-md-1">
@@ -43,7 +44,9 @@
           {{ row.values[6].formattedValue }}
         </div>
         <div class="grid--cell col-sm-12 col-md-2">
-          <span class="responsive--header" v-if="row.values[8].formattedValue">%</span>
+          <span class="responsive--header" v-if="row.values[8].formattedValue"
+            >%</span
+          >
           {{ row.values[8].formattedValue }}
           <span v-if="row.values[8].formattedValue">%</span>
         </div>
