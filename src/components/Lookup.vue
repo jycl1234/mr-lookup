@@ -49,7 +49,7 @@ export default {
       matRange: ":",
       results: null,
       region: null,
-      isLoading: false,
+      isLoading: false
     };
   },
   methods: {
@@ -75,7 +75,7 @@ export default {
         const url = `${baseUrl}${spreadsheetId}?ranges=${this.sheetUrl}!${this.matRange}&fields=sheets&key=${apiKey}`;
         axios
           .get(url)
-          .then((res) => {
+          .then(res => {
             this.isLoading = false;
             const { rowData } = res.data.sheets[0].data[0]; // lol
             if (rowData) {
@@ -87,7 +87,7 @@ export default {
               }
             }
           })
-          .catch((err) => {
+          .catch(err => {
             this.isLoading = false;
             alert("Error loading data.");
             console.log(err);
@@ -96,8 +96,8 @@ export default {
     },
     handleClear() {
       this.results = null;
-    },
-  },
+    }
+  }
 };
 </script>
 
