@@ -1,6 +1,10 @@
 <template>
   <div class="container--sheet-selector">
-    <select v-on:change="$emit('handle-sheet-select', $event.target.value)">
+    <select
+      v-model="sheetUrl"
+      v-on:change="$emit('handle-sheet-select', $event.target.value)"
+    >
+      <option value="">-- Select Sheet --</option>
       <option
         v-for="sheet in sheetIds"
         v-bind:key="sheet.sheetId"
@@ -22,6 +26,7 @@ export default {
       sheetUrl: "",
     };
   },
+  methods: {},
 };
 </script>
 
@@ -32,7 +37,7 @@ export default {
     width: 100%;
     font-size: 1rem;
     @media (min-width: 992px) {
-      width: 70%;
+      width: 50%;
     }
   }
 }

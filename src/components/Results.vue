@@ -62,6 +62,7 @@ export default {
       naMsg: "1P+2L",
     };
   },
+  methods: {},
 };
 </script>
 

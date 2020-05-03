@@ -2,10 +2,10 @@
   <div class="container container--lookup">
     <h1>FGO Dropsheet Lookup Tool</h1>
     <div class="row">
-      <div class="col-sm-12 col-lg-6">
+      <div class="col-sm-12">
         <SheetSelector v-on:handle-sheet-select="handleSheetSelect" />
       </div>
-      <div class="col-sm-12 col-lg-6">
+      <div class="col-sm-12">
         <MatSelector v-on:handle-mat-select="handleMatSelect" />
       </div>
       <div class="col-sm-12 container--button">
@@ -16,8 +16,8 @@
         >
           search
         </button>
-        <button class="button--reset" type="button" v-on:click="handleReset()">
-          reset
+        <button class="button--reset" type="button" v-on:click="handleClear()">
+          clear
         </button>
       </div>
     </div>
@@ -30,7 +30,8 @@
 
 <script>
 import axios from "axios";
-import { baseUrl, spreadsheetId, apiKey } from "../constants";
+import { baseUrl, spreadsheetId } from "../constants";
+import { apiKey } from "../apiKey";
 import { sheetIds } from "../sheets";
 import { mats } from "../mats";
 import SheetSelector from "./SheetSelector";
@@ -77,7 +78,6 @@ export default {
           .then((res) => {
             this.isLoading = false;
             this.results = res.data.values;
-            console.log(res.data.values);
             const { range } = res.data;
             if (range.indexOf("JP") > -1) {
               this.region = "JP";
@@ -92,7 +92,7 @@ export default {
           });
       }
     },
-    handleReset() {
+    handleClear() {
       this.results = null;
     },
   },

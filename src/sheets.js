@@ -1,10 +1,5 @@
 export const sheetIds = [
   {
-    title: "-- Select Sheet --",
-    sheetId: "",
-    sheetUrl: "",
-  },
-  {
     title: "Best 5 AP/Drop (JP)",
     sheetId: "843570146",
     sheetUrl: "Best%205%20AP%2FDrop%20%28JP%29",

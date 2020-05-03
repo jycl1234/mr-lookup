@@ -7,8 +7,9 @@
 <script>
 // TODO:
 // 1. improve error UX
-// 2. pull down wiki links from sheets api
+// 2. pull down wiki links from sheets api (?)
 // 3. add in gems/pieces js
+// 4. reset button resets all state
 
 import Lookup from "./components/Lookup.vue";
 
