@@ -273,6 +273,27 @@ export const mats = [
     type: "mat",
   },
   {
+    name: "Mysterious Divine Wine",
+    startRange: "D210",
+    endRange: "N214",
+    rarity: "gold",
+    type: "mat",
+  },
+  {
+    name: "Dawnlight Reactor Core",
+    startRange: "D215",
+    endRange: "N219",
+    rarity: "gold",
+    type: "mat",
+  },
+  {
+    name: "Tsukumo Mirror",
+    startRange: "D220",
+    endRange: "N224",
+    rarity: "gold",
+    type: "mat",
+  },
+  {
     name: "Egg of Truth",
     startRange: "T190",
     endRange: "AD194",

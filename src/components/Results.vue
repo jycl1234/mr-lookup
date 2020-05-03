@@ -21,6 +21,7 @@
         </div>
         <div class="grid--cell col-sm-12 col-md-3">
           <span class="responsive--header">Quest</span>
+          &nbsp;
           <a
             class="link--wiki"
             v-if="row.values[3].hyperlink"
