@@ -5,14 +5,20 @@
       <div class="col-sm-12 col-lg-6">
         <SheetSelector v-on:handle-sheet-select="handleSheetSelect" />
       </div>
-      <div class="row">
-        <div class="col-sm-12 col-lg-6">
-          <MatSelector v-on:handle-mat-select="handleMatSelect" />
-        </div>
-        <div class="col-sm-12 container--button">
-          <button class="button--submit" type="button" v-on:click="handleSubmit()">search</button>
-          <button class="button--reset" type="button" v-on:click="handleReset()">reset</button>
-        </div>
+      <div class="col-sm-12 col-lg-6">
+        <MatSelector v-on:handle-mat-select="handleMatSelect" />
+      </div>
+      <div class="col-sm-12 container--button">
+        <button
+          class="button--submit"
+          type="button"
+          v-on:click="handleSubmit()"
+        >
+          search
+        </button>
+        <button class="button--reset" type="button" v-on:click="handleReset()">
+          reset
+        </button>
       </div>
     </div>
     <div v-if="isLoading" class="overlay--loading">
@@ -42,7 +48,7 @@ export default {
       matRange: ":",
       results: null,
       region: null,
-      isLoading: false
+      isLoading: false,
     };
   },
   methods: {
@@ -68,7 +74,7 @@ export default {
         const url = `${baseUrl}${spreadsheetId}/values/${this.sheetUrl}!${this.matRange}?key=${apiKey}`;
         axios
           .get(url)
-          .then(res => {
+          .then((res) => {
             this.isLoading = false;
             this.results = res.data.values;
             console.log(res.data.values);
@@ -79,7 +85,7 @@ export default {
               this.region = "NA";
             }
           })
-          .catch(err => {
+          .catch((err) => {
             this.isLoading = false;
             alert("Error loading data.");
             console.log(err);
@@ -88,8 +94,8 @@ export default {
     },
     handleReset() {
       this.results = null;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -104,8 +110,15 @@ export default {
   padding: 2rem;
   h1 {
     color: #fff;
-    margin: 2rem 0;
+    margin: 0 0 2rem 0;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    @media (min-width: 768px) {
+      font-size: 1.6rem;
+    }
+    @media (min-width: 992px) {
+      font-size: 2rem;
+    }
   }
   .overlay--loading {
     color: #fff;

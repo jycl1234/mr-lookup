@@ -5,7 +5,8 @@
         v-for="sheet in sheetIds"
         v-bind:key="sheet.sheetId"
         v-bind:value="sheet.sheetUrl"
-      >{{ sheet.title }}</option>
+        >{{ sheet.title }}</option
+      >
     </select>
   </div>
 </template>
@@ -18,10 +19,9 @@ export default {
   data() {
     return {
       sheetIds,
-      sheetUrl: ""
+      sheetUrl: "",
     };
   },
-  methods: {}
 };
 </script>
 

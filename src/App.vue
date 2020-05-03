@@ -6,10 +6,9 @@
 
 <script>
 // TODO:
-// 1. improve responsive data layout
-// 2. improve error UX
-// 3. pull down wiki links from sheets api
-// 4. add in gems/pieces js
+// 1. improve error UX
+// 2. pull down wiki links from sheets api
+// 3. add in gems/pieces js
 
 import Lookup from "./components/Lookup.vue";
 
