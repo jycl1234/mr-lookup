@@ -9,16 +9,8 @@
         <MatSelector v-on:handle-mat-select="handleMatSelect" />
       </div>
       <div class="col-sm-12 container--button">
-        <button
-          class="button--submit"
-          type="button"
-          v-on:click="handleSubmit()"
-        >
-          search
-        </button>
-        <button class="button--reset" type="button" v-on:click="handleClear()">
-          clear
-        </button>
+        <button class="button--submit" type="button" v-on:click="handleSubmit()">search</button>
+        <button class="button--reset" type="button" v-on:click="handleClear()">clear</button>
       </div>
     </div>
     <div v-if="isLoading" class="overlay--loading">
@@ -49,7 +41,7 @@ export default {
       matRange: ":",
       results: null,
       region: null,
-      isLoading: false,
+      isLoading: false
     };
   },
   methods: {
@@ -61,6 +53,7 @@ export default {
     },
     handleSubmit() {
       let errors = 0;
+      this.results = null;
       if (!this.sheetUrl) {
         errors++;
         alert("Please select a sheet.");
@@ -70,22 +63,23 @@ export default {
         alert("Please select a mat.");
       }
       if (errors === 0) {
-        this.results = null;
         this.isLoading = true;
-        const url = `${baseUrl}${spreadsheetId}/values/${this.sheetUrl}!${this.matRange}?key=${apiKey}`;
+        const url = `${baseUrl}${spreadsheetId}?ranges=${this.sheetUrl}!${this.matRange}&fields=sheets&key=${apiKey}`;
         axios
           .get(url)
-          .then((res) => {
+          .then(res => {
             this.isLoading = false;
-            this.results = res.data.values;
-            const { range } = res.data;
-            if (range.indexOf("JP") > -1) {
-              this.region = "JP";
-            } else {
-              this.region = "NA";
+            const { rowData } = res.data.sheets[0].data[0]; // lol
+            if (rowData) {
+              // if there's no formattedValue on first line this is a blank entry
+              if (rowData[0].values[2].formattedValue) {
+                this.results = rowData;
+              } else {
+                this.results = [];
+              }
             }
           })
-          .catch((err) => {
+          .catch(err => {
             this.isLoading = false;
             alert("Error loading data.");
             console.log(err);
@@ -94,8 +88,8 @@ export default {
     },
     handleClear() {
       this.results = null;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -105,15 +99,15 @@ export default {
   max-width: 70rem;
   height: auto;
   text-align: center;
-  background: rgba(49, 57, 93, 0.7);
+  background: rgba(49, 57, 93, 0.9);
   box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.7);
   padding: 2rem;
-    @media (min-width: 768px) {
-      width: 80%;
-    }
-    @media (min-width: 992px) {
-      width: 70%;
-    }
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+  @media (min-width: 992px) {
+    width: 70%;
+  }
   h1 {
     color: #fff;
     margin: 0 0 2rem 0;
