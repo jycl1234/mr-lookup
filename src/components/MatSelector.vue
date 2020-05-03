@@ -1,16 +1,12 @@
 <template>
   <div class="container--mat-selector">
-    <select
-      v-model="matRange"
-      v-on:change="$emit('handle-mat-select', $event.target.value)"
-    >
-      <option value="">-- Select Mat --</option>
+    <select v-model="matRange" v-on:change="$emit('handle-mat-select', $event.target.value)">
+      <option value>-- Select Mat --</option>
       <option
         v-for="mat in filteredMats"
         v-bind:key="mat.startRange + ':' + mat.endRange"
         v-bind:value="mat.startRange + ':' + mat.endRange"
-        >{{ mat.name }}</option
-      >
+      >{{ mat.name }}</option>
     </select>
     <div class="container--mat-filter row">
       <div class="col-xs-12">
@@ -53,6 +49,49 @@
           </div>
           <label for="bronze">bronze</label>
         </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="wrapper--filter">
+          <div class="wrapper--filter-inner">
+            <input
+              v-model="matTypeFilter"
+              v-on:change="handleFilter"
+              type="checkbox"
+              id="mat"
+              class="input--checkbox-filter mat"
+              value="mat"
+            />
+          </div>
+          <label for="mat">mat</label>
+        </div>
+        <div class="wrapper--filter">
+          <div class="wrapper--filter-inner">
+            <input
+              v-model="matTypeFilter"
+              v-on:change="handleFilter"
+              type="checkbox"
+              id="skill"
+              class="input--checkbox-filter skill"
+              value="skill"
+            />
+          </div>
+          <label for="skill">skill</label>
+        </div>
+        <div class="wrapper--filter">
+          <div class="wrapper--filter-inner">
+            <input
+              v-model="matTypeFilter"
+              v-on:change="handleFilter"
+              type="checkbox"
+              id="ascension"
+              class="input--checkbox-filter ascension"
+              value="ascension"
+            />
+          </div>
+          <label for="ascension">ascension</label>
+        </div>
+      </div>
+      <div class="col-xs-12">
         <div class="wrapper--filter">
           <div class="wrapper--filter-inner">
             <input
@@ -95,31 +134,52 @@ export default {
       filteredMats: mats,
       matRange: "",
       matRarityFilter: ["gold", "silver", "bronze"],
-      matSort: "ascending",
+      matTypeFilter: ["mat"],
+      matSort: "ascending"
     };
   },
   methods: {
     handleFilter() {
       this.matRange = "";
       this.$emit("handle-mat-select", "");
-      let newMats = [];
+      let newMatsRarityFiltered = [];
+      let newMatsTypeFiltered = [];
+
+      // sort by rarity
+
       for (let [, value] of Object.entries(this.matRarityFilter)) {
-        let filtered = mats.filter((mat) => {
+        let filtered = mats.filter(mat => {
           return mat.rarity === value;
         });
-        newMats = [...newMats, ...filtered];
+        newMatsRarityFiltered = [...newMatsRarityFiltered, ...filtered];
       }
+
+      // sort by type
+
+      for (let [, value] of Object.entries(this.matTypeFilter)) {
+        let filtered = newMatsRarityFiltered.filter(mat => {
+          return mat.type === value;
+        });
+        newMatsTypeFiltered = [...newMatsTypeFiltered, ...filtered];
+      }
+
+      // order by ASC/DESC
+
       if (this.matSort === "ascending") {
-        newMats = newMats.sort((a, b) => (a.name > b.name ? 1 : -1));
+        newMatsTypeFiltered = newMatsTypeFiltered.sort((a, b) =>
+          a.name > b.name ? 1 : -1
+        );
       } else {
-        newMats = newMats.sort((a, b) => (a.name < b.name ? 1 : -1));
+        newMatsTypeFiltered = newMatsTypeFiltered.sort((a, b) =>
+          a.name < b.name ? 1 : -1
+        );
       }
-      this.filteredMats = newMats;
-    },
+      this.filteredMats = newMatsTypeFiltered;
+    }
   },
   created: function() {
     this.handleFilter();
-  },
+  }
 };
 </script>
 
@@ -137,18 +197,21 @@ export default {
 .container--mat-filter {
   margin-top: 1.4rem;
   color: #fff;
-  .wrapper--filter {
-    margin: 0.1rem 0.5rem;
-  }
-  .wrapper--filter,
-  .wrapper--filter-inner {
-    display: inline-block;
-    margin: 0 0.5rem;
-    .input--checkbox-filter,
-    .input--radio-filter {
-      position: relative;
-      margin-right: 0.4rem;
-      top: 0.12rem;
+  .col-xs-12 {
+    margin-bottom: 0.5rem;
+    .wrapper--filter {
+      margin: 0.1rem 0.5rem;
+    }
+    .wrapper--filter,
+    .wrapper--filter-inner {
+      display: inline-block;
+      margin: 0 0.5rem;
+      .input--checkbox-filter,
+      .input--radio-filter {
+        position: relative;
+        margin-right: 0.4rem;
+        top: 0.12rem;
+      }
     }
   }
 }

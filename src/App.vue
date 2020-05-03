@@ -8,16 +8,15 @@
 // TODO:
 // 1. improve error UX
 // 2. pull down wiki links from sheets api (?)
-// 3. add in gems/pieces js
-// 4. reset button resets all state
+// 3. reset button resets all state
 
 import Lookup from "./components/Lookup.vue";
 
 export default {
   name: "App",
   components: {
-    Lookup,
-  },
+    Lookup
+  }
 };
 </script>
 
