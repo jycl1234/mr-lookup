@@ -101,13 +101,19 @@ export default {
 
 <style lang="scss" scoped>
 .container--lookup {
-  width: 70%;
+  width: 100%;
   max-width: 70rem;
   height: auto;
   text-align: center;
   background: rgba(49, 57, 93, 0.7);
   box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.7);
   padding: 2rem;
+    @media (min-width: 768px) {
+      width: 80%;
+    }
+    @media (min-width: 992px) {
+      width: 70%;
+    }
   h1 {
     color: #fff;
     margin: 0 0 2rem 0;

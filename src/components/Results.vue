@@ -7,8 +7,8 @@
         <div class="grid--cell col-sm-12 col-md-1">AP</div>
         <div class="grid--cell col-sm-12 col-md-1">
           BP/AP
-          <span class="info" v-if="region === 'JP'" v-tooltip="jpMsg">(!)</span
-          ><span v-else class="info" v-tooltip="naMsg">(!)</span>
+          <!-- <span class="info" v-if="region === 'JP'" v-tooltip="jpMsg">(!)</span
+          ><span v-else class="info" v-tooltip="naMsg">(!)</span>-->
         </div>
         <div class="grid--cell col-sm-12 col-md-1">AP/Drop</div>
         <div class="grid--cell col-sm-12 col-md-2">Drop Chance</div>
@@ -16,26 +16,34 @@
       </div>
       <div class="row grid--row" v-for="row in results" v-bind:key="row[0]">
         <div class="grid--cell col-sm-12 col-md-2">
-          <span class="responsive--header">Area</span>{{ row[2] }}
+          <span class="responsive--header">Area</span>
+          {{ row[2] }}
         </div>
         <div class="grid--cell col-sm-12 col-md-3">
-          <span class="responsive--header">Quest</span>{{ row[3] }}
+          <span class="responsive--header">Quest</span>
+          {{ row[3] }}
         </div>
         <div class="grid--cell col-sm-12 col-md-1">
-          <span class="responsive--header">AP</span>{{ row[4] }}
+          <span class="responsive--header">AP</span>
+          {{ row[4] }}
         </div>
         <div class="grid--cell col-sm-12 col-md-1">
-          <span class="responsive--header">BP/AP</span>{{ row[5] }}
+          <span class="responsive--header">BP/AP</span>
+          {{ row[5] }}
         </div>
         <div class="grid--cell col-sm-12 col-md-1">
-          <span class="responsive--header">APD</span>{{ row[6] }}
+          <span class="responsive--header">APD</span>
+          {{ row[6] }}
         </div>
         <div class="grid--cell col-sm-12 col-md-2">
-          <span class="responsive--header">%</span>{{ row[8]
-          }}<span v-if="row[8] !== ''">%</span>
+          <span class="responsive--header">%</span>
+          {{ row[8]
+          }}
+          <span v-if="row[8] !== ''">%</span>
         </div>
         <div class="grid--cell col-sm-12 col-md-1">
-          <span class="responsive--header">Runs</span>{{ row[10] }}
+          <span class="responsive--header">Runs</span>
+          {{ row[10] }}
         </div>
       </div>
     </div>
@@ -52,17 +60,17 @@ export default {
   name: "Results",
   props: {
     results: {
-      type: Array,
+      type: Array
     },
-    region: String,
+    region: String
   },
   data() {
     return {
       jpMsg: "1P+1L+1T",
-      naMsg: "1P+2L",
+      naMsg: "1P+2L"
     };
   },
-  methods: {},
+  methods: {}
 };
 </script>
 
@@ -70,12 +78,13 @@ export default {
 .container--results {
   margin-top: 1rem;
   .grid {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     width: 100%;
     padding: 1rem 1rem 2rem 1rem;
     background: rgba(255, 255, 255, 0.7);
     text-align: left;
     @media (min-width: 992px) {
+      font-size: 0.85rem;
       text-align: center;
     }
     .grid--row {
