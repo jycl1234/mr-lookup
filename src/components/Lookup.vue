@@ -14,6 +14,7 @@
           :matRanges="matRanges"
         />
       </div>
+      <div class="col-sm-12"><ErrorMsg :errorMsg="errorMsg" /></div>
       <div class="col-sm-12 container--button">
         <button
           class="button--submit"
@@ -48,10 +49,11 @@ import SheetSelector from "./SheetSelector";
 import MatSelector from "./MatSelector";
 import Results from "./Results";
 import SearchLink from "./SearchLink";
+import ErrorMsg from "./ErrorMsg";
 
 export default {
   name: "Lookup",
-  components: { SheetSelector, MatSelector, Results, SearchLink },
+  components: { SheetSelector, MatSelector, Results, SearchLink, ErrorMsg },
   data() {
     return {
       sheetIds,
@@ -64,7 +66,8 @@ export default {
       results: null,
       region: null,
       isLoading: false,
-      searchLink: null
+      searchLink: null,
+      errorMsg: null
     };
   },
   methods: {
@@ -76,17 +79,15 @@ export default {
       this.matRange = matRange;
     },
     handleSubmit() {
-      let errors = 0;
+      this.errorMsg = null;
       this.results = null;
       if (!this.sheetUrl) {
-        errors++;
-        alert("Please select a sheet.");
-      }
-      if (this.matRange.length < 5) {
-        errors++;
-        alert("Please select a mat.");
-      }
-      if (errors === 0) {
+        this.errorMsg = "Please select a sheet.";
+        return;
+      } else if (this.matRange.length < 5) {
+        this.errorMsg = "Please select a mat.";
+        return;
+      } else {
         this.isLoading = true;
         const url = `${baseUrl}${spreadsheetId}?ranges=${this.sheetUrl}!${this.matRange}&fields=sheets&key=${apiKey}`;
         axios
@@ -105,7 +106,7 @@ export default {
           })
           .catch(err => {
             this.isLoading = false;
-            alert("Error loading data.");
+            this.errorMsg = "Error loading data.";
             console.log(err);
           });
       }
@@ -115,15 +116,17 @@ export default {
       this.searchLink = null;
       this.sheetId = "";
       this.matRanges = "";
+      this.errorMsg = null;
       if (this.$route.path !== "/") {
         this.$router.push("/");
       }
     },
     handleLink() {
+      this.errorMsg = null;
       if (this.sheetId !== "" && this.matRange !== "") {
         this.searchLink = `${window.location.origin}/${this.sheetId}/${this.matRange}`;
       } else {
-        alert("Please select a sheet and a mat first.");
+        this.errorMsg = "Please select a sheet and a mat first.";
       }
     }
   },
@@ -155,7 +158,7 @@ export default {
   }
   h1 {
     color: #fff;
-    margin: 0 0 2rem 0;
+    margin: 0 0 1rem 0;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
     font-size: 1.4rem;
     @media (min-width: 768px) {

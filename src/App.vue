@@ -7,8 +7,8 @@
 
 <script>
 // TODO
-// - improve error handling UX
 // - mat nickname search (textbox?)
+// - filter out unavailable mats in NA
 </script>
 
 <style lang="scss">

@@ -13,116 +13,110 @@
         >{{ mat.name }}</option
       >
     </select>
-    <div class="container--mat-filter row">
-      <div class="col-xs-12">
-        <div class="wrapper--filter">
-          <div class="wrapper--filter-inner">
-            <input
-              v-model="matRarityFilter"
-              v-on:change="handleFilter"
-              type="checkbox"
-              id="gold"
-              class="input--checkbox-filter gold"
-              value="gold"
-            />
-          </div>
+    <div class="container--mat-filter container-fluid">
+      <div class="row">
+        <div class="col-xs-3 col--label">
+          <span class="wrapper--filter-label">Rarity</span>
+        </div>
+        <div class="col-xs-3 col--filter">
+          <input
+            v-model="matRarityFilter"
+            v-on:change="handleFilter"
+            type="checkbox"
+            id="gold"
+            class="input--checkbox-filter gold"
+            value="gold"
+          />
           <label for="gold">gold</label>
         </div>
-        <div class="wrapper--filter">
-          <div class="wrapper--filter-inner">
-            <input
-              v-model="matRarityFilter"
-              v-on:change="handleFilter"
-              type="checkbox"
-              id="silver"
-              class="input--checkbox-filter silver"
-              value="silver"
-            />
-          </div>
+        <div class="col-xs-3 col--filter">
+          <input
+            v-model="matRarityFilter"
+            v-on:change="handleFilter"
+            type="checkbox"
+            id="silver"
+            class="input--checkbox-filter silver"
+            value="silver"
+          />
           <label for="silver">silver</label>
         </div>
-        <div class="wrapper--filter">
-          <div class="wrapper--filter-inner">
-            <input
-              v-model="matRarityFilter"
-              v-on:change="handleFilter"
-              type="checkbox"
-              id="bronze"
-              class="input--checkbox-filter bronze"
-              value="bronze"
-            />
-          </div>
+        <div class="col-xs-3 col--filter">
+          <input
+            v-model="matRarityFilter"
+            v-on:change="handleFilter"
+            type="checkbox"
+            id="bronze"
+            class="input--checkbox-filter bronze"
+            value="bronze"
+          />
           <label for="bronze">bronze</label>
         </div>
       </div>
-      <div class="col-xs-12">
-        <div class="wrapper--filter">
-          <div class="wrapper--filter-inner">
-            <input
-              v-model="matTypeFilter"
-              v-on:change="handleFilter"
-              type="checkbox"
-              id="mat"
-              class="input--checkbox-filter mat"
-              value="mat"
-            />
-          </div>
+      <div class="row">
+        <div class="col-xs-3 col--label">
+          <span class="wrapper--filter-label">Type</span>
+        </div>
+        <div class="col-xs-3 col--filter">
+          <input
+            v-model="matTypeFilter"
+            v-on:change="handleFilter"
+            type="checkbox"
+            id="mat"
+            class="input--checkbox-filter mat"
+            value="mat"
+          />
           <label for="mat">mat</label>
         </div>
-        <div class="wrapper--filter">
-          <div class="wrapper--filter-inner">
-            <input
-              v-model="matTypeFilter"
-              v-on:change="handleFilter"
-              type="checkbox"
-              id="skill"
-              class="input--checkbox-filter skill"
-              value="skill"
-            />
-          </div>
+        <div class="col-xs-3 col--filter">
+          <input
+            v-model="matTypeFilter"
+            v-on:change="handleFilter"
+            type="checkbox"
+            id="skill"
+            class="input--checkbox-filter skill"
+            value="skill"
+          />
           <label for="skill">skill</label>
         </div>
-        <div class="wrapper--filter">
-          <div class="wrapper--filter-inner">
-            <input
-              v-model="matTypeFilter"
-              v-on:change="handleFilter"
-              type="checkbox"
-              id="ascension"
-              class="input--checkbox-filter ascension"
-              value="ascension"
-            />
-          </div>
+        <div class="col-xs-3 col--filter">
+          <input
+            v-model="matTypeFilter"
+            v-on:change="handleFilter"
+            type="checkbox"
+            id="ascension"
+            class="input--checkbox-filter ascension"
+            value="ascension"
+          />
           <label for="ascension">ascension</label>
         </div>
       </div>
-      <div class="col-xs-12">
-        <div class="wrapper--filter">
-          <div class="wrapper--filter-inner">
-            <input
-              v-model="matSort"
-              v-on:change="handleFilter"
-              type="radio"
-              id="ascending"
-              class="input--radio-filter ascending"
-              value="ascending"
-            />
-          </div>
+      <div class="row">
+        <div class="col-xs-3 col--label">
+          <span class="wrapper--filter-label">Sort</span>
+        </div>
+        <div class="col-xs-3 col--filter">
+          <input
+            v-model="matSort"
+            v-on:change="handleFilter"
+            type="radio"
+            id="ascending"
+            class="input--radio-filter ascending"
+            value="ascending"
+          />
           <label for="ascending">A-Z</label>
         </div>
-        <div class="wrapper--filter">
-          <div class="wrapper--filter-inner">
-            <input
-              v-model="matSort"
-              v-on:change="handleFilter"
-              type="radio"
-              id="descending"
-              class="input--radio-filter descending"
-              value="descending"
-            />
-          </div>
+        <div class="col-xs-3 col--filter">
+          <input
+            v-model="matSort"
+            v-on:change="handleFilter"
+            type="radio"
+            id="descending"
+            class="input--radio-filter descending"
+            value="descending"
+          />
           <label for="descending">Z-A</label>
         </div>
+        <div class="col-xs-3 col--filter"></div>
       </div>
     </div>
   </div>
@@ -214,21 +208,35 @@ export default {
 .container--mat-filter {
   margin-top: 1.4rem;
   color: #fff;
-  .col-xs-12 {
-    margin-bottom: 0.5rem;
-    .wrapper--filter {
-      margin: 0.1rem 0.5rem;
+  width: 98%;
+  margin: 1rem auto;
+  @media (min-width: 992px) {
+    width: 80%;
+  }
+  @media (min-width: 1200px) {
+    width: 64%;
+  }
+  .col--label,
+  .col--filter {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.2rem;
+    @media (min-width: 576px) {
+      text-align: left;
+      width: 25%;
     }
-    .wrapper--filter,
-    .wrapper--filter-inner {
-      display: inline-block;
-      margin: 0 0.5rem;
-      .input--checkbox-filter,
-      .input--radio-filter {
-        position: relative;
-        margin-right: 0.4rem;
-        top: 0.12rem;
-      }
+    .input--checkbox-filter,
+    .input--radio-filter {
+      position: relative;
+      margin-right: 0.4rem;
+      top: 0.18rem;
+    }
+  }
+  .col--label {
+    margin: 0.6rem 0 1rem 0;
+    font-weight: bold;
+    @media (min-width: 576px) {
+      margin: 0 0 0.8rem 0;
     }
   }
 }
