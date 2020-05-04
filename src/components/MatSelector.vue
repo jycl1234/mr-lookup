@@ -142,7 +142,7 @@ export default {
       filteredMats: mats,
       matRange: "",
       matRarityFilter: ["gold", "silver", "bronze"],
-      matTypeFilter: ["mat"],
+      matTypeFilter: ["mat", "skill", "ascension"],
       matSort: "ascending"
     };
   },
