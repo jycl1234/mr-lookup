@@ -44,6 +44,10 @@ export default {
             'option[data-key="' + this.sheetId + '"'
           ).value;
           this.sheetUrl = valueFromSearch;
+          this.$emit("handle-sheet-select", {
+            key: this.sheetId,
+            value: valueFromSearch
+          });
         }
       }
     }

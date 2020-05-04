@@ -4,6 +4,7 @@
       v-model="matRange"
       v-on:change="$emit('handle-mat-select', $event.target.value)"
     >
+      >
       <option value>-- Select Mat --</option>
       <option
         v-for="mat in filteredMats"
@@ -132,6 +133,9 @@ import { mats } from "../mats";
 
 export default {
   name: "MatSelector",
+  props: {
+    matRanges: String
+  },
   data() {
     return {
       mats,
@@ -179,6 +183,17 @@ export default {
         );
       }
       this.filteredMats = newMatsTypeFiltered;
+    }
+  },
+  watch: {
+    matRanges: {
+      immediate: false,
+      handler(val) {
+        if (val) {
+          this.matRange = this.matRanges;
+          this.$emit("handle-mat-select", this.matRanges);
+        }
+      }
     }
   },
   created: function() {

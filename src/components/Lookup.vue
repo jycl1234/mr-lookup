@@ -9,7 +9,10 @@
         />
       </div>
       <div class="col-sm-12">
-        <MatSelector v-on:handle-mat-select="handleMatSelect" />
+        <MatSelector
+          v-on:handle-mat-select="handleMatSelect"
+          :matRanges="matRanges"
+        />
       </div>
       <div class="col-sm-12 container--button">
         <button
@@ -53,10 +56,11 @@ export default {
     return {
       sheetIds,
       mats,
-      sheetId: null,
       sheetUrl: "",
       sheetObj: {},
-      matRange: ":",
+      matRange: "",
+      sheetId: null,
+      matRanges: null,
       results: null,
       region: null,
       isLoading: false,
@@ -119,10 +123,10 @@ export default {
   },
   mounted: function() {
     if (this.$route.path) {
-      console.log("lookup mounted");
       const path = encodeURI(this.$route.path);
       const values = path.substr(1).split("/");
       this.sheetId = values[0];
+      this.matRanges = values[1];
     }
   }
 };
