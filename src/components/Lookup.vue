@@ -3,7 +3,10 @@
     <h1>FGO Dropsheet Lookup Tool</h1>
     <div class="row">
       <div class="col-sm-12">
-        <SheetSelector v-on:handle-sheet-select="handleSheetSelect" />
+        <SheetSelector
+          v-on:handle-sheet-select="handleSheetSelect"
+          :sheetId="sheetId"
+        />
       </div>
       <div class="col-sm-12">
         <MatSelector v-on:handle-mat-select="handleMatSelect" />
@@ -19,8 +22,12 @@
         <button class="button--reset" type="button" v-on:click="handleClear()">
           clear
         </button>
+        <button class="button--link" type="button" v-on:click="handleLink()">
+          get link
+        </button>
       </div>
     </div>
+    <SearchLink :searchLink="searchLink" />
     <div v-if="isLoading" class="overlay--loading">
       <span>loading...</span>
     </div>
@@ -37,24 +44,29 @@ import { mats } from "../mats";
 import SheetSelector from "./SheetSelector";
 import MatSelector from "./MatSelector";
 import Results from "./Results";
+import SearchLink from "./SearchLink";
 
 export default {
   name: "Lookup",
-  components: { SheetSelector, MatSelector, Results },
+  components: { SheetSelector, MatSelector, Results, SearchLink },
   data() {
     return {
       sheetIds,
       mats,
+      sheetId: null,
       sheetUrl: "",
+      sheetObj: {},
       matRange: ":",
       results: null,
       region: null,
-      isLoading: false
+      isLoading: false,
+      searchLink: null
     };
   },
   methods: {
-    handleSheetSelect(sheetUrl) {
-      this.sheetUrl = sheetUrl;
+    handleSheetSelect(sheetObj) {
+      this.sheetId = sheetObj.key;
+      this.sheetUrl = sheetObj.value;
     },
     handleMatSelect(matRange) {
       this.matRange = matRange;
@@ -96,6 +108,21 @@ export default {
     },
     handleClear() {
       this.results = null;
+    },
+    handleLink() {
+      if (this.sheetId !== "" && this.matRange !== "") {
+        this.searchLink = `${window.location.origin}/${this.sheetId}/${this.matRange}`;
+      } else {
+        alert("Please select a sheet and a mat first.");
+      }
+    }
+  },
+  mounted: function() {
+    if (this.$route.path) {
+      console.log("lookup mounted");
+      const path = encodeURI(this.$route.path);
+      const values = path.substr(1).split("/");
+      this.sheetId = values[0];
     }
   }
 };
@@ -148,7 +175,8 @@ export default {
     }
   }
   .button--submit,
-  .button--reset {
+  .button--reset,
+  .button--link {
     font-size: 1rem;
     margin: 0.5rem 0.5rem;
     padding: 0.25rem 2rem;
