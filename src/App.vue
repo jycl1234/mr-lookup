@@ -5,6 +5,12 @@
   </div>
 </template>
 
+<script>
+// TODO
+// - improve error handling UX
+// - mat nickname search (textbox?)
+</script>
+
 <style lang="scss">
 * {
   box-sizing: border-box;

@@ -59,8 +59,8 @@ export default {
       sheetUrl: "",
       sheetObj: {},
       matRange: "",
-      sheetId: null,
-      matRanges: null,
+      sheetId: "",
+      matRanges: "",
       results: null,
       region: null,
       isLoading: false,
@@ -112,6 +112,12 @@ export default {
     },
     handleClear() {
       this.results = null;
+      this.searchLink = null;
+      this.sheetId = "";
+      this.matRanges = "";
+      if (this.$route.path !== "/") {
+        this.$router.push("/");
+      }
     },
     handleLink() {
       if (this.sheetId !== "" && this.matRange !== "") {
@@ -122,7 +128,7 @@ export default {
     }
   },
   mounted: function() {
-    if (this.$route.path) {
+    if (this.$route.path.length > 1) {
       const path = encodeURI(this.$route.path);
       const values = path.substr(1).split("/");
       this.sheetId = values[0];

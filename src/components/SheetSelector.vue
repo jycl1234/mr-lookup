@@ -1,7 +1,7 @@
 <template>
   <div class="container--sheet-selector">
     <select v-model="sheetUrl" v-on:change="handleChange" ref="sheetSelector">
-      <option value="">-- Select Sheet --</option>
+      <option data-key="" value="">-- Select Sheet --</option>
       <option
         v-for="sheet in sheetIds"
         v-bind:key="sheet.sheetId"
@@ -39,16 +39,14 @@ export default {
     sheetId: {
       immediate: false,
       handler(val) {
-        if (val) {
-          const valueFromSearch = this.$refs.sheetSelector.querySelector(
-            'option[data-key="' + this.sheetId + '"'
-          ).value;
-          this.sheetUrl = valueFromSearch;
-          this.$emit("handle-sheet-select", {
-            key: this.sheetId,
-            value: valueFromSearch
-          });
-        }
+        const valueFromSearch = this.$refs.sheetSelector.querySelector(
+          'option[data-key="' + val + '"'
+        ).value;
+        this.sheetUrl = valueFromSearch;
+        this.$emit("handle-sheet-select", {
+          key: val,
+          value: valueFromSearch
+        });
       }
     }
   }

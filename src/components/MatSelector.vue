@@ -5,7 +5,7 @@
       v-on:change="$emit('handle-mat-select', $event.target.value)"
     >
       >
-      <option value>-- Select Mat --</option>
+      <option value="">-- Select Mat --</option>
       <option
         v-for="mat in filteredMats"
         v-bind:key="mat.startRange + ':' + mat.endRange"
@@ -188,11 +188,9 @@ export default {
   watch: {
     matRanges: {
       immediate: false,
-      handler(val) {
-        if (val) {
-          this.matRange = this.matRanges;
-          this.$emit("handle-mat-select", this.matRanges);
-        }
+      handler() {
+        this.matRange = this.matRanges;
+        this.$emit("handle-mat-select", this.matRanges);
       }
     }
   },
