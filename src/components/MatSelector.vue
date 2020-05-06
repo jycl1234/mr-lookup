@@ -125,7 +125,8 @@ import { mats } from "../mats";
 export default {
   name: "MatSelector",
   props: {
-    savedMatRanges: String
+    savedMatRanges: String,
+    region: String
   },
   data() {
     return {
@@ -148,25 +149,32 @@ export default {
       }
     },
     handleFilter() {
-      this.$emit("handle-mat-select", "");
+      let newMatsRegionFiltered = [];
       let newMatsRarityFiltered = [];
       let newMatsTypeFiltered = [];
+
+      // remove unavailable mats
+
+      if (this.region === "" || this.region === "JP") {
+        newMatsRegionFiltered = mats;
+      } else {
+        let filtered = mats.filter(mat => mat.availability === this.region);
+        newMatsRegionFiltered = [...newMatsRegionFiltered, ...filtered];
+      }
 
       // sort by rarity
 
       for (let [, value] of Object.entries(this.matRarityFilter)) {
-        let filtered = mats.filter(mat => {
-          return mat.rarity === value;
-        });
+        let filtered = newMatsRegionFiltered.filter(
+          mat => mat.rarity === value
+        );
         newMatsRarityFiltered = [...newMatsRarityFiltered, ...filtered];
       }
 
       // sort by type
 
       for (let [, value] of Object.entries(this.matTypeFilter)) {
-        let filtered = newMatsRarityFiltered.filter(mat => {
-          return mat.type === value;
-        });
+        let filtered = newMatsRarityFiltered.filter(mat => mat.type === value);
         newMatsTypeFiltered = [...newMatsTypeFiltered, ...filtered];
       }
 
@@ -182,6 +190,17 @@ export default {
         );
       }
       this.filteredMats = newMatsTypeFiltered;
+
+      // double check mat still exists, otherwise reset
+
+      if (
+        this.filteredMats.filter(
+          mat => `${mat.startRange}:${mat.endRange}` === this.matRange
+        ).length <= 0
+      ) {
+        this.matRange = "";
+        this.$emit("handle-mat-select", "");
+      }
     }
   },
   watch: {
@@ -190,6 +209,12 @@ export default {
       handler() {
         this.matRange = this.savedMatRanges;
         this.$emit("handle-mat-select", this.matRange);
+      }
+    },
+    region: {
+      immediate: false,
+      handler() {
+        this.handleFilter();
       }
     }
   },

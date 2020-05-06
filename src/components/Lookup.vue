@@ -12,6 +12,7 @@
         <MatSelector
           v-on:handle-mat-select="handleMatSelect"
           :savedMatRanges="savedMatRanges"
+          :region="region"
         />
       </div>
       <div class="col-sm-12"><ErrorMsg :errorMsg="errorMsg" /></div>
@@ -35,7 +36,7 @@
     <div v-if="isLoading" class="overlay--loading">
       <span>loading...</span>
     </div>
-    <Results :results="results" :region="region" />
+    <Results :results="results" />
   </div>
 </template>
 
@@ -64,7 +65,7 @@ export default {
       matRanges: "",
       savedMatRanges: "",
       results: null,
-      region: null,
+      region: "",
       isLoading: false,
       searchLink: null,
       errorMsg: null
@@ -74,6 +75,11 @@ export default {
     handleSheetSelect(sheetObj) {
       this.savedSheetId = sheetObj.key;
       this.sheetUrl = sheetObj.value;
+      if (sheetObj.value.indexOf("JP") > -1) {
+        this.region = "JP";
+      } else {
+        this.region = "ALL";
+      }
     },
     handleMatSelect(matRanges) {
       this.savedMatRanges = matRanges;
@@ -118,6 +124,7 @@ export default {
       this.savedSheetId = "";
       this.matRanges = "";
       this.savedMatRanges = "";
+      this.region = "";
       window.localStorage.removeItem("sheetUrl");
       window.localStorage.removeItem("matRanges");
       this.errorMsg = null;
@@ -145,12 +152,18 @@ export default {
         i => i.sheetUrl === this.sheetUrl
       ).sheetId;
       this.savedMatRanges = window.localStorage.getItem("matRanges");
+      if (this.sheetUrl.indexOf("JP") > -1) {
+        this.region = "JP";
+      } else {
+        this.region = "ALL";
+      }
     }
     if (this.$route.path.length > 1) {
       const path = encodeURI(this.$route.path);
       const values = path.substr(1).split("/");
       this.savedSheetId = values[0];
       this.matRanges = values[1];
+      this.savedMatRanges = values[1];
       setTimeout(() => {
         this.handleSubmit();
       }, 100);
