@@ -124,7 +124,7 @@ export default {
     handleLink() {
       this.errorMsg = null;
       if (this.sheetId !== "" && this.matRange !== "") {
-        this.searchLink = `${window.location.origin}/${this.sheetId}/${this.matRange}`;
+        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.sheetId}/${this.matRange}`;
       } else {
         this.errorMsg = "Please select a sheet and a mat first.";
       }
