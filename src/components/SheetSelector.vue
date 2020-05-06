@@ -29,6 +29,7 @@ export default {
   },
   methods: {
     handleChange(e) {
+      window.localStorage.setItem("sheetUrl", e.target.value);
       this.$emit("handle-sheet-select", {
         key: e.target.querySelector(":checked").getAttribute("data-key"),
         value: e.target.value

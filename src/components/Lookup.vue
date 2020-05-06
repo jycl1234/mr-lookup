@@ -116,6 +116,8 @@ export default {
       this.searchLink = null;
       this.sheetId = "";
       this.matRanges = "";
+      window.localStorage.removeItem("sheetUrl");
+      window.localStorage.removeItem("matRanges");
       this.errorMsg = null;
       if (this.$route.path !== "/") {
         this.$router.push("/");
@@ -131,6 +133,16 @@ export default {
     }
   },
   mounted: function() {
+    if (
+      window.localStorage.getItem("sheetUrl") !== null &&
+      window.localStorage.getItem("matRanges") !== null
+    ) {
+      this.sheetUrl = window.localStorage.getItem("sheetUrl");
+      this.matRanges = window.localStorage.getItem("matRanges");
+      this.sheetId = this.sheetIds.find(
+        i => i.sheetUrl === this.sheetUrl
+      ).sheetId;
+    }
     if (this.$route.path.length > 1) {
       const path = encodeURI(this.$route.path);
       const values = path.substr(1).split("/");

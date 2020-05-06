@@ -1,9 +1,6 @@
 <template>
   <div class="container--mat-selector">
-    <select
-      v-model="matRange"
-      v-on:change="$emit('handle-mat-select', $event.target.value)"
-    >
+    <select v-model="matRange" v-on:change="handleChange">
       >
       <option value="">-- Select Mat --</option>
       <option
@@ -141,6 +138,10 @@ export default {
     };
   },
   methods: {
+    handleChange(e) {
+      window.localStorage.setItem("matRanges", e.target.value);
+      this.$emit("handle-mat-select", e.target.value);
+    },
     handleFilter() {
       this.matRange = "";
       this.$emit("handle-mat-select", "");
