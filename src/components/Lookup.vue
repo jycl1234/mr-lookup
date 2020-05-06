@@ -136,6 +136,9 @@ export default {
       const values = path.substr(1).split("/");
       this.sheetId = values[0];
       this.matRanges = values[1];
+      setTimeout(() => {
+        this.handleSubmit();
+      }, 100);
     }
   }
 };
