@@ -19,7 +19,7 @@ import { sheetIds } from "../sheets";
 export default {
   name: "SheetSelector",
   props: {
-    sheetId: String
+    savedSheetId: String
   },
   data() {
     return {
@@ -29,15 +29,23 @@ export default {
   },
   methods: {
     handleChange(e) {
-      window.localStorage.setItem("sheetUrl", e.target.value);
-      this.$emit("handle-sheet-select", {
-        key: e.target.querySelector(":checked").getAttribute("data-key"),
-        value: e.target.value
-      });
+      if (e.target.value !== "") {
+        window.localStorage.setItem("sheetUrl", e.target.value);
+        this.$emit("handle-sheet-select", {
+          key: e.target.querySelector(":checked").getAttribute("data-key"),
+          value: e.target.value
+        });
+      } else {
+        window.localStorage.removeItem("sheetUrl");
+        this.$emit("handle-sheet-select", {
+          key: "",
+          value: ""
+        });
+      }
     }
   },
   watch: {
-    sheetId: {
+    savedSheetId: {
       immediate: false,
       handler(val) {
         const valueFromSearch = this.$refs.sheetSelector.querySelector(

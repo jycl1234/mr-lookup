@@ -125,13 +125,13 @@ import { mats } from "../mats";
 export default {
   name: "MatSelector",
   props: {
-    matRanges: String
+    savedMatRanges: String
   },
   data() {
     return {
       mats,
-      filteredMats: mats,
       matRange: "",
+      filteredMats: mats,
       matRarityFilter: ["gold", "silver", "bronze"],
       matTypeFilter: ["mat", "skill", "ascension"],
       matSort: "ascending"
@@ -139,11 +139,15 @@ export default {
   },
   methods: {
     handleChange(e) {
-      window.localStorage.setItem("matRanges", e.target.value);
-      this.$emit("handle-mat-select", e.target.value);
+      if (e.target.value !== "") {
+        window.localStorage.setItem("matRanges", e.target.value);
+        this.$emit("handle-mat-select", e.target.value);
+      } else {
+        window.localStorage.removeItem("matRanges");
+        this.$emit("handle-mat-select", "");
+      }
     },
     handleFilter() {
-      this.matRange = "";
       this.$emit("handle-mat-select", "");
       let newMatsRarityFiltered = [];
       let newMatsTypeFiltered = [];
@@ -181,11 +185,11 @@ export default {
     }
   },
   watch: {
-    matRanges: {
+    savedMatRanges: {
       immediate: false,
       handler() {
-        this.matRange = this.matRanges;
-        this.$emit("handle-mat-select", this.matRanges);
+        this.matRange = this.savedMatRanges;
+        this.$emit("handle-mat-select", this.matRange);
       }
     }
   },

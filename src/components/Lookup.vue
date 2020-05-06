@@ -5,13 +5,13 @@
       <div class="col-sm-12">
         <SheetSelector
           v-on:handle-sheet-select="handleSheetSelect"
-          :sheetId="sheetId"
+          :savedSheetId="savedSheetId"
         />
       </div>
       <div class="col-sm-12">
         <MatSelector
           v-on:handle-mat-select="handleMatSelect"
-          :matRanges="matRanges"
+          :savedMatRanges="savedMatRanges"
         />
       </div>
       <div class="col-sm-12"><ErrorMsg :errorMsg="errorMsg" /></div>
@@ -60,9 +60,9 @@ export default {
       mats,
       sheetUrl: "",
       sheetObj: {},
-      matRange: "",
-      sheetId: "",
+      savedSheetId: "",
       matRanges: "",
+      savedMatRanges: "",
       results: null,
       region: null,
       isLoading: false,
@@ -72,11 +72,12 @@ export default {
   },
   methods: {
     handleSheetSelect(sheetObj) {
-      this.sheetId = sheetObj.key;
+      this.savedSheetId = sheetObj.key;
       this.sheetUrl = sheetObj.value;
     },
-    handleMatSelect(matRange) {
-      this.matRange = matRange;
+    handleMatSelect(matRanges) {
+      this.savedMatRanges = matRanges;
+      this.matRanges = matRanges;
     },
     handleSubmit() {
       this.errorMsg = null;
@@ -84,12 +85,12 @@ export default {
       if (!this.sheetUrl) {
         this.errorMsg = "Please select a sheet.";
         return;
-      } else if (this.matRange.length < 5) {
+      } else if (this.matRanges.length < 5) {
         this.errorMsg = "Please select a mat.";
         return;
       } else {
         this.isLoading = true;
-        const url = `${baseUrl}${spreadsheetId}?ranges=${this.sheetUrl}!${this.matRange}&fields=sheets&key=${apiKey}`;
+        const url = `${baseUrl}${spreadsheetId}?ranges=${this.sheetUrl}!${this.matRanges}&fields=sheets&key=${apiKey}`;
         axios
           .get(url)
           .then(res => {
@@ -114,8 +115,9 @@ export default {
     handleClear() {
       this.results = null;
       this.searchLink = null;
-      this.sheetId = "";
+      this.savedSheetId = "";
       this.matRanges = "";
+      this.savedMatRanges = "";
       window.localStorage.removeItem("sheetUrl");
       window.localStorage.removeItem("matRanges");
       this.errorMsg = null;
@@ -125,8 +127,8 @@ export default {
     },
     handleLink() {
       this.errorMsg = null;
-      if (this.sheetId !== "" && this.matRange !== "") {
-        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.sheetId}/${this.matRange}`;
+      if (this.savedSheetId !== "" && this.savedMatRanges !== "") {
+        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.savedSheetId}/${this.savedMatRanges}`;
       } else {
         this.errorMsg = "Please select a sheet and a mat first.";
       }
@@ -139,14 +141,15 @@ export default {
     ) {
       this.sheetUrl = window.localStorage.getItem("sheetUrl");
       this.matRanges = window.localStorage.getItem("matRanges");
-      this.sheetId = this.sheetIds.find(
+      this.savedSheetId = this.sheetIds.find(
         i => i.sheetUrl === this.sheetUrl
       ).sheetId;
+      this.savedMatRanges = window.localStorage.getItem("matRanges");
     }
     if (this.$route.path.length > 1) {
       const path = encodeURI(this.$route.path);
       const values = path.substr(1).split("/");
-      this.sheetId = values[0];
+      this.savedSheetId = values[0];
       this.matRanges = values[1];
       setTimeout(() => {
         this.handleSubmit();
