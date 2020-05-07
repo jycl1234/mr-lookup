@@ -396,6 +396,15 @@ export const mats = [
     filename: "A116"
   },
   {
+    name: "Fruit of Eternity",
+    startRange: "T200",
+    endRange: "AD204",
+    rarity: "gold",
+    type: "mat",
+    availability: "JP",
+    filename: "A117"
+  },
+  {
     name: "Secret Gem of Saber",
     startRange: "T5",
     endRange: "AD9",
