@@ -5,7 +5,8 @@ export const mats = [
     endRange: "N9",
     rarity: "bronze",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A301"
   },
   {
     name: "Evil Bone",
@@ -13,7 +14,8 @@ export const mats = [
     endRange: "N14",
     rarity: "bronze",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A302"
   },
   {
     name: "Dragon Fang",
@@ -21,7 +23,8 @@ export const mats = [
     endRange: "N19",
     rarity: "bronze",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A303"
   },
   {
     name: "Void Dust",
@@ -29,7 +32,8 @@ export const mats = [
     endRange: "N24",
     rarity: "bronze",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A304"
   },
   {
     name: "Fool's Chain",
@@ -37,7 +41,8 @@ export const mats = [
     endRange: "N29",
     rarity: "bronze",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A305"
   },
   {
     name: "Deadly Poisonous Needle",
@@ -45,7 +50,8 @@ export const mats = [
     endRange: "N34",
     rarity: "bronze",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A306"
   },
   {
     name: "Mystic Spinal Fluid",
@@ -53,7 +59,8 @@ export const mats = [
     endRange: "N39",
     rarity: "bronze",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A307"
   },
   {
     name: "Stake of Wailing Night",
@@ -61,7 +68,8 @@ export const mats = [
     endRange: "N46",
     rarity: "bronze",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A308"
   },
   {
     name: "Mystic Gunpowder",
@@ -69,7 +77,8 @@ export const mats = [
     endRange: "N51",
     rarity: "bronze",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A309"
   },
   {
     name: "Seed of Yggdrasil",
@@ -77,7 +86,8 @@ export const mats = [
     endRange: "N56",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A201"
   },
   {
     name: "Ghost Lantern",
@@ -85,7 +95,8 @@ export const mats = [
     endRange: "N61",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A202"
   },
   {
     name: "Octuplet Crystal",
@@ -93,7 +104,8 @@ export const mats = [
     endRange: "N66",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A203"
   },
   {
     name: "Serpent Jewel",
@@ -101,7 +113,8 @@ export const mats = [
     endRange: "N71",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A204"
   },
   {
     name: "Phoenix Feather",
@@ -109,7 +122,8 @@ export const mats = [
     endRange: "N76",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A205"
   },
   {
     name: "Eternal Gear",
@@ -117,7 +131,8 @@ export const mats = [
     endRange: "N83",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A206"
   },
   {
     name: "Forbidden Page",
@@ -125,7 +140,8 @@ export const mats = [
     endRange: "N88",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A207"
   },
   {
     name: "Homunculus Baby",
@@ -133,7 +149,8 @@ export const mats = [
     endRange: "N93",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A208"
   },
   {
     name: "Meteor Horseshoe",
@@ -141,7 +158,8 @@ export const mats = [
     endRange: "N98",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A209"
   },
   {
     name: "Great Knight Medal",
@@ -149,7 +167,8 @@ export const mats = [
     endRange: "N103",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A210"
   },
   {
     name: "Shell of Reminiscence",
@@ -157,7 +176,8 @@ export const mats = [
     endRange: "N108",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A211"
   },
   {
     name: "Refined Magatama",
@@ -165,7 +185,8 @@ export const mats = [
     endRange: "N113",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A212"
   },
   {
     name: "Eternal Ice",
@@ -173,7 +194,8 @@ export const mats = [
     endRange: "N120",
     rarity: "silver",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A213"
   },
   {
     name: "Giant's Ring",
@@ -181,7 +203,8 @@ export const mats = [
     endRange: "N125",
     rarity: "silver",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A214"
   },
   {
     name: "Aurora Steel",
@@ -189,7 +212,8 @@ export const mats = [
     endRange: "N130",
     rarity: "silver",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A215"
   },
   {
     name: "Ancient Bell of Tranquility",
@@ -197,7 +221,8 @@ export const mats = [
     endRange: "N135",
     rarity: "silver",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A216"
   },
   {
     name: "Arrowhead of Disastrous Sin",
@@ -205,7 +230,8 @@ export const mats = [
     endRange: "N140",
     rarity: "silver",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A217"
   },
   {
     name: "Moonlit Tiara",
@@ -213,7 +239,8 @@ export const mats = [
     endRange: "N145",
     rarity: "silver",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A218"
   },
   {
     name: "Divine Spirit Particle",
@@ -221,7 +248,8 @@ export const mats = [
     endRange: "N150",
     rarity: "silver",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A219"
   },
   {
     name: "Claw of Chaos",
@@ -229,7 +257,8 @@ export const mats = [
     endRange: "N157",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A101"
   },
   {
     name: "Heart of the Foreign God",
@@ -237,7 +266,8 @@ export const mats = [
     endRange: "N162",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A102"
   },
   {
     name: "Dragon's Reverse Scale",
@@ -245,7 +275,8 @@ export const mats = [
     endRange: "N167",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A103"
   },
   {
     name: "Spirit Root",
@@ -253,7 +284,8 @@ export const mats = [
     endRange: "N172",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A104"
   },
   {
     name: "Warhorse's Young Horn",
@@ -261,7 +293,8 @@ export const mats = [
     endRange: "N177",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A105"
   },
   {
     name: "Tearstone of Blood",
@@ -269,7 +302,8 @@ export const mats = [
     endRange: "N182",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A106"
   },
   {
     name: "Black Beast Grease",
@@ -277,7 +311,8 @@ export const mats = [
     endRange: "N187",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A107"
   },
   {
     name: "Lamp of Evil-Sealing",
@@ -285,7 +320,8 @@ export const mats = [
     endRange: "N194",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A108"
   },
   {
     name: "Scarab of Wisdom",
@@ -293,7 +329,8 @@ export const mats = [
     endRange: "N199",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A109"
   },
   {
     name: "Primordial Lanugo",
@@ -301,7 +338,8 @@ export const mats = [
     endRange: "N204",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A110"
   },
   {
     name: "Cursed Beast Gallstone",
@@ -309,7 +347,8 @@ export const mats = [
     endRange: "N209",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A111"
   },
   {
     name: "Mysterious Divine Wine",
@@ -317,7 +356,8 @@ export const mats = [
     endRange: "N214",
     rarity: "gold",
     type: "mat",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "A112"
   },
   {
     name: "Dawnlight Reactor Core",
@@ -325,7 +365,8 @@ export const mats = [
     endRange: "N219",
     rarity: "gold",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A113"
   },
   {
     name: "Tsukumo Mirror",
@@ -333,7 +374,8 @@ export const mats = [
     endRange: "N224",
     rarity: "gold",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A114"
   },
   {
     name: "Egg of Truth",
@@ -341,7 +383,8 @@ export const mats = [
     endRange: "AD194",
     rarity: "gold",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A115"
   },
   {
     name: "Glittering Star Shard",
@@ -349,7 +392,8 @@ export const mats = [
     endRange: "AD199",
     rarity: "gold",
     type: "mat",
-    availability: "JP"
+    availability: "JP",
+    filename: "A116"
   },
   {
     name: "Secret Gem of Saber",
