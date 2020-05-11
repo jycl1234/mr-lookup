@@ -80,6 +80,7 @@
       <div class="row">
         <div class="col-xs-12 col--selected-mat" v-if="selectedMat">
           <span class="span--label">Selected:</span>
+          <img class="image--selected-mat" v-bind:src="selectedMatPath" />
           <span
             class="icon--toggle-mat"
             v-if="isClosed"
@@ -136,6 +137,7 @@ export default {
       filteredMats: mats,
       isSelected: null,
       selectedMat: null,
+      selectedMatPath: null,
       matRarityFilter: ["gold", "silver", "bronze"],
       matTypeFilter: ["mat", "skill", "ascension"]
     };
@@ -149,9 +151,10 @@ export default {
     },
     handleClick(mat) {
       if (mat) {
+        this.selectedMat = mat;
+        this.selectedMatPath = this.getUrl(mat);
         this.handleToggle();
         this.isSelected = mat.startRange + ":" + mat.endRange;
-        this.selectedMat = mat;
         this.$emit("handle-mat-select", `${mat.startRange}:${mat.endRange}`);
       }
     },
@@ -208,9 +211,11 @@ export default {
           this.selectedMat = this.filteredMats.filter(
             mat => `${mat.startRange}:${mat.endRange}` === this.isSelected
           );
+          this.selectedMatPath = this.getUrl(this.selectedMat[0]);
           this.$emit("handle-mat-select", this.savedMatRanges);
         } else {
           this.selectedMat = null;
+          this.selectedMatPath = null;
           this.isSelected = null;
         }
       }
@@ -237,7 +242,7 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     max-height: 1500px;
     overflow: hidden;
@@ -301,16 +306,25 @@ export default {
     }
   }
   .col--selected-mat {
-    text-align: center;
+    text-align: left;
+    padding: 0;
+    margin-top: 1rem;
+    @media (min-width: 576px) {
+      text-align: center;
+    }
     .span--label {
       font-weight: bold;
     }
     .icon--toggle-mat {
       position: absolute;
-      top: -0.7rem;
+      top: 0.2rem;
       right: 0;
       font-size: 1.6rem;
       cursor: pointer;
+    }
+    .image--selected-mat {
+      width: 3rem;
+      margin-left: 1rem;
     }
   }
 }

@@ -8,10 +8,8 @@
 <script>
 // TODO
 // - dynamically update url on search param updates
-// - visual search by mat image
 // - autocopy on get link focus
 // - sort mats by order of appearance in story (unlikely)
-// - text search by nickname (unlikely)
 </script>
 
 <style lang="scss">
