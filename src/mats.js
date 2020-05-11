@@ -410,7 +410,8 @@ export const mats = [
     endRange: "AD9",
     rarity: "gold",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B101"
   },
   {
     name: "Secret Gem of Archer",
@@ -418,7 +419,8 @@ export const mats = [
     endRange: "AD14",
     rarity: "gold",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B102"
   },
   {
     name: "Secret Gem of Lancer",
@@ -426,7 +428,8 @@ export const mats = [
     endRange: "AD19",
     rarity: "gold",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B103"
   },
   {
     name: "Secret Gem of Rider",
@@ -434,7 +437,8 @@ export const mats = [
     endRange: "AD24",
     rarity: "gold",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B104"
   },
   {
     name: "Secret Gem of Caster",
@@ -442,7 +446,8 @@ export const mats = [
     endRange: "AD29",
     rarity: "gold",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B105"
   },
   {
     name: "Secret Gem of Assassin",
@@ -450,7 +455,8 @@ export const mats = [
     endRange: "AD34",
     rarity: "gold",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B106"
   },
   {
     name: "Secret Gem of Berserker",
@@ -458,7 +464,8 @@ export const mats = [
     endRange: "AD39",
     rarity: "gold",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B107"
   },
   {
     name: "Magic Gem of Saber",
@@ -466,7 +473,8 @@ export const mats = [
     endRange: "AD46",
     rarity: "silver",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B111"
   },
   {
     name: "Magic Gem of Archer",
@@ -474,7 +482,8 @@ export const mats = [
     endRange: "AD51",
     rarity: "silver",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B112"
   },
   {
     name: "Magic Gem of Lancer",
@@ -482,7 +491,8 @@ export const mats = [
     endRange: "AD56",
     rarity: "silver",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B113"
   },
   {
     name: "Magic Gem of Rider",
@@ -490,7 +500,8 @@ export const mats = [
     endRange: "AD61",
     rarity: "silver",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B114"
   },
   {
     name: "Magic Gem of Caster",
@@ -498,7 +509,8 @@ export const mats = [
     endRange: "AD66",
     rarity: "silver",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B115"
   },
   {
     name: "Magic Gem of Assassin",
@@ -506,7 +518,8 @@ export const mats = [
     endRange: "AD71",
     rarity: "silver",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B116"
   },
   {
     name: "Magic Gem of Berserker",
@@ -514,7 +527,8 @@ export const mats = [
     endRange: "AD76",
     rarity: "silver",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B117"
   },
   {
     name: "Gem of Saber",
@@ -522,7 +536,8 @@ export const mats = [
     endRange: "AD83",
     rarity: "bronze",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B121"
   },
   {
     name: "Gem of Archer",
@@ -530,7 +545,8 @@ export const mats = [
     endRange: "AD88",
     rarity: "bronze",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B122"
   },
   {
     name: "Gem of Lancer",
@@ -538,7 +554,8 @@ export const mats = [
     endRange: "AD93",
     rarity: "bronze",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B123"
   },
   {
     name: "Gem of Rider",
@@ -546,7 +563,8 @@ export const mats = [
     endRange: "AD98",
     rarity: "bronze",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B124"
   },
   {
     name: "Gem of Caster",
@@ -554,7 +572,8 @@ export const mats = [
     endRange: "AD103",
     rarity: "bronze",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B125"
   },
   {
     name: "Gem of Assassin",
@@ -562,7 +581,8 @@ export const mats = [
     endRange: "AD108",
     rarity: "bronze",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B126"
   },
   {
     name: "Gem of Berserker",
@@ -570,7 +590,8 @@ export const mats = [
     endRange: "AD113",
     rarity: "bronze",
     type: "skill",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B127"
   },
   {
     name: "Saber Monument",
@@ -578,7 +599,8 @@ export const mats = [
     endRange: "AD120",
     rarity: "gold",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B201"
   },
   {
     name: "Archer Monument",
@@ -586,7 +608,8 @@ export const mats = [
     endRange: "AD125",
     rarity: "gold",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B202"
   },
   {
     name: "Lancer Monument",
@@ -594,7 +617,8 @@ export const mats = [
     endRange: "AD130",
     rarity: "gold",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B203"
   },
   {
     name: "Rider Monument",
@@ -602,7 +626,8 @@ export const mats = [
     endRange: "AD135",
     rarity: "gold",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B204"
   },
   {
     name: "Caster Monument",
@@ -610,7 +635,8 @@ export const mats = [
     endRange: "AD140",
     rarity: "gold",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B205"
   },
   {
     name: "Assassin Monument",
@@ -618,7 +644,8 @@ export const mats = [
     endRange: "AD145",
     rarity: "gold",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B206"
   },
   {
     name: "Berserker Monument",
@@ -626,7 +653,8 @@ export const mats = [
     endRange: "AD150",
     rarity: "gold",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B207"
   },
   {
     name: "Saber Piece",
@@ -634,7 +662,8 @@ export const mats = [
     endRange: "AD157",
     rarity: "silver",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B211"
   },
   {
     name: "Archer Piece",
@@ -642,7 +671,8 @@ export const mats = [
     endRange: "AD162",
     rarity: "silver",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B212"
   },
   {
     name: "Lancer Piece",
@@ -650,7 +680,8 @@ export const mats = [
     endRange: "AD167",
     rarity: "silver",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B213"
   },
   {
     name: "Rider Piece",
@@ -658,7 +689,8 @@ export const mats = [
     endRange: "AD172",
     rarity: "silver",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B214"
   },
   {
     name: "Caster Piece",
@@ -666,7 +698,8 @@ export const mats = [
     endRange: "AD177",
     rarity: "silver",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B215"
   },
   {
     name: "Assassin Piece",
@@ -674,7 +707,8 @@ export const mats = [
     endRange: "AD182",
     rarity: "silver",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B216"
   },
   {
     name: "Berserker Piece",
@@ -682,6 +716,7 @@ export const mats = [
     endRange: "AD187",
     rarity: "silver",
     type: "ascension",
-    availability: "ALL"
+    availability: "ALL",
+    filename: "B217"
   }
 ];
