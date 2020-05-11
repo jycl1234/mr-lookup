@@ -96,6 +96,9 @@ export default {
         this.sheetUrl = "";
         window.localStorage.removeItem("sheetUrl");
       }
+      if (this.sheetUrl !== "" && this.matRanges !== "") {
+        this.handleSubmit();
+      }
     },
     handleMatSelect(matRanges) {
       if (matRanges !== "") {
@@ -106,6 +109,10 @@ export default {
         this.savedMatRanges = "";
         this.matRanges = "";
         window.localStorage.removeItem("matRanges");
+        this.isClosed = false;
+      }
+      if (this.sheetUrl !== "" && this.matRanges !== "") {
+        this.handleSubmit();
       }
     },
     handleMatToggle() {
