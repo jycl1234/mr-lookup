@@ -9,10 +9,12 @@
         />
       </div>
       <div class="col-sm-12">
-        <MatSelector
+        <MatSelectorVisual
           v-on:handle-mat-select="handleMatSelect"
+          v-on:handle-mat-toggle="handleMatToggle"
           :savedMatRanges="savedMatRanges"
           :region="region"
+          :isClosed="isClosed"
         />
       </div>
       <div class="col-sm-12"><ErrorMsg :errorMsg="errorMsg" /></div>
@@ -47,14 +49,20 @@ import { apiKey } from "../apiKey";
 import { sheetIds } from "../sheets";
 import { mats } from "../mats";
 import SheetSelector from "./SheetSelector";
-import MatSelector from "./MatSelector";
+import MatSelectorVisual from "./MatSelectorVisual";
 import Results from "./Results";
 import SearchLink from "./SearchLink";
 import ErrorMsg from "./ErrorMsg";
 
 export default {
   name: "Lookup",
-  components: { SheetSelector, MatSelector, Results, SearchLink, ErrorMsg },
+  components: {
+    SheetSelector,
+    MatSelectorVisual,
+    Results,
+    SearchLink,
+    ErrorMsg
+  },
   data() {
     return {
       sheetIds,
@@ -64,6 +72,7 @@ export default {
       savedSheetId: "",
       matRanges: "",
       savedMatRanges: "",
+      isClosed: true,
       results: null,
       region: "",
       isLoading: false,
@@ -73,17 +82,34 @@ export default {
   },
   methods: {
     handleSheetSelect(sheetObj) {
-      this.savedSheetId = sheetObj.key;
-      this.sheetUrl = sheetObj.value;
-      if (sheetObj.value.indexOf("JP") > -1) {
-        this.region = "JP";
+      if (sheetObj && sheetObj.key !== "") {
+        this.savedSheetId = sheetObj.key;
+        this.sheetUrl = sheetObj.value;
+        window.localStorage.setItem("sheetUrl", sheetObj.value);
+        if (sheetObj.value.indexOf("JP") > -1) {
+          this.region = "JP";
+        } else {
+          this.region = "ALL";
+        }
       } else {
-        this.region = "ALL";
+        this.savedSheetId = "";
+        this.sheetUrl = "";
+        window.localStorage.removeItem("sheetUrl");
       }
     },
     handleMatSelect(matRanges) {
-      this.savedMatRanges = matRanges;
-      this.matRanges = matRanges;
+      if (matRanges !== "") {
+        this.savedMatRanges = matRanges;
+        this.matRanges = matRanges;
+        window.localStorage.setItem("matRanges", matRanges);
+      } else {
+        this.savedMatRanges = "";
+        this.matRanges = "";
+        window.localStorage.removeItem("matRanges");
+      }
+    },
+    handleMatToggle() {
+      this.isClosed = !this.isClosed;
     },
     handleSubmit() {
       this.errorMsg = null;
@@ -96,6 +122,7 @@ export default {
         return;
       } else {
         this.isLoading = true;
+        this.isClosed = true;
         const url = `${baseUrl}${spreadsheetId}?ranges=${this.sheetUrl}!${this.matRanges}&fields=sheets&key=${apiKey}`;
         axios
           .get(url)
@@ -125,9 +152,10 @@ export default {
       this.matRanges = "";
       this.savedMatRanges = "";
       this.region = "";
+      this.errorMsg = null;
+      this.isClosed = false;
       window.localStorage.removeItem("sheetUrl");
       window.localStorage.removeItem("matRanges");
-      this.errorMsg = null;
       if (this.$route.path !== "/") {
         this.$router.push("/");
       }
@@ -157,6 +185,8 @@ export default {
       } else {
         this.region = "ALL";
       }
+    } else {
+      this.isClosed = false;
     }
     if (this.$route.path.length > 1) {
       const path = encodeURI(this.$route.path);

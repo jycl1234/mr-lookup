@@ -30,13 +30,11 @@ export default {
   methods: {
     handleChange(e) {
       if (e.target.value !== "") {
-        window.localStorage.setItem("sheetUrl", e.target.value);
         this.$emit("handle-sheet-select", {
           key: e.target.querySelector(":checked").getAttribute("data-key"),
           value: e.target.value
         });
       } else {
-        window.localStorage.removeItem("sheetUrl");
         this.$emit("handle-sheet-select", {
           key: "",
           value: ""
@@ -69,7 +67,10 @@ export default {
     width: 100%;
     font-size: 1rem;
     @media (min-width: 992px) {
-      width: 50%;
+      width: 80%;
+    }
+    @media (min-width: 1200px) {
+      width: 65%;
     }
   }
 }

@@ -78,7 +78,7 @@ export default {
     font-size: 0.9rem;
     width: 100%;
     padding: 1rem 1rem 2rem 1rem;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgb(181, 181, 181);
     text-align: left;
     @media (min-width: 768px) {
       font-size: 0.8rem;
@@ -107,6 +107,10 @@ export default {
       .grid--cell {
         padding: 0 0.1rem;
         margin: 0 0 0.4rem 0;
+        color: #000;
+        a {
+          color: rgba(49, 57, 93, 1);
+        }
         @media (min-width: 768px) {
           margin: 0;
         }
