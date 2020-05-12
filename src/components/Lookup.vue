@@ -12,25 +12,20 @@
         <MatSelectorVisual
           v-on:handle-mat-select="handleMatSelect"
           v-on:handle-mat-toggle="handleMatToggle"
+          v-on:handle-trigger-reset="handleTriggerReset"
           :savedMatRanges="savedMatRanges"
           :region="region"
           :isClosed="isClosed"
+          :triggerReset="triggerReset"
         />
       </div>
       <div class="col-sm-12"><ErrorMsg :errorMsg="errorMsg" /></div>
       <div class="col-sm-12 container--button">
-        <button
-          class="button--submit"
-          type="button"
-          v-on:click="handleSubmit()"
-        >
-          search
-        </button>
-        <button class="button--reset" type="button" v-on:click="handleClear()">
-          clear
+        <button class="button--reset" type="button" v-on:click="handleReset()">
+          reset
         </button>
         <button class="button--link" type="button" v-on:click="handleLink()">
-          get link
+          link
         </button>
       </div>
     </div>
@@ -73,6 +68,7 @@ export default {
       matRanges: "",
       savedMatRanges: "",
       isClosed: true,
+      triggerReset: false,
       results: null,
       region: "",
       isLoading: false,
@@ -119,6 +115,9 @@ export default {
     handleMatToggle() {
       this.isClosed = !this.isClosed;
     },
+    handleTriggerReset() {
+      this.triggerReset = false;
+    },
     handleSubmit() {
       this.errorMsg = null;
       this.results = null;
@@ -153,7 +152,7 @@ export default {
           });
       }
     },
-    handleClear() {
+    handleReset() {
       this.results = null;
       this.searchLink = null;
       this.savedSheetId = "843570146";
@@ -162,6 +161,7 @@ export default {
       this.region = "JP";
       this.errorMsg = null;
       this.isClosed = false;
+      this.triggerReset = true;
       window.localStorage.setItem(
         "sheetUrl",
         "Best%205%20AP%2FDrop%20%28JP%29"
@@ -229,7 +229,7 @@ export default {
     width: 70%;
   }
   h1 {
-    color: #fff;
+    color: #b5b5b5;
     margin: 0 0 1rem 0;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
     font-size: 1.4rem;
@@ -241,7 +241,7 @@ export default {
     }
   }
   .overlay--loading {
-    color: #fff;
+    color: #b5b5b5;
     margin-top: 4rem;
     font-size: 2rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);

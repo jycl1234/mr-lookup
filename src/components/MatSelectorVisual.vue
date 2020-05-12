@@ -133,7 +133,8 @@ export default {
   props: {
     savedMatRanges: String,
     region: String,
-    isClosed: Boolean
+    isClosed: Boolean,
+    triggerReset: Boolean
   },
   data() {
     return {
@@ -235,6 +236,18 @@ export default {
       immediate: false,
       handler() {
         this.handleFilter();
+      }
+    },
+    triggerReset: {
+      immediate: false,
+      handler() {
+        this.selectedMat = null;
+        this.selectedMatPath = null;
+        this.isSelected = null;
+        this.matRarityFilter = ["gold", "silver", "bronze"];
+        this.matTypeFilter = ["mat", "skill", "ascension"];
+        this.handleFilter();
+        this.$emit("handle-trigger-reset");
       }
     }
   },
