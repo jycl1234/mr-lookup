@@ -63,7 +63,7 @@
             class="input--checkbox-filter skill"
             value="skill"
           />
-          <label for="skill">skill</label>
+          <label for="skill">gems</label>
         </div>
         <div class="col-xs-3 col--filter">
           <input
@@ -74,13 +74,18 @@
             class="input--checkbox-filter ascension"
             value="ascension"
           />
-          <label for="ascension">ascension</label>
+          <label for="ascension">pieces/monus</label>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col--selected-mat" v-if="selectedMat">
           <span class="span--label">Selected:</span>
-          <img class="image--selected-mat" v-bind:src="selectedMatPath" />
+          <img
+            class="image--selected-mat"
+            v-bind:src="selectedMatPath"
+            v-on:click="handleToggle"
+            title="Click to select another"
+          />
           <span
             class="icon--toggle-mat"
             v-if="isClosed"
@@ -189,6 +194,12 @@ export default {
       }
 
       this.filteredMats = newMatsTypeFiltered;
+
+      // order by filename
+
+      newMatsTypeFiltered = newMatsTypeFiltered.sort((a, b) =>
+        a.filename > b.filename ? 1 : -1
+      );
 
       // double check mat still exists, otherwise reset
 
@@ -325,6 +336,7 @@ export default {
     .image--selected-mat {
       width: 3rem;
       margin-left: 1rem;
+      cursor: pointer;
     }
   }
 }
