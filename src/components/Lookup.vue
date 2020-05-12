@@ -110,6 +110,7 @@ export default {
         this.matRanges = "";
         window.localStorage.removeItem("matRanges");
         this.isClosed = false;
+        this.results = null;
       }
       if (this.sheetUrl !== "" && this.matRanges !== "") {
         this.handleSubmit();
