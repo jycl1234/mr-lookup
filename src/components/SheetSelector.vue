@@ -1,7 +1,6 @@
 <template>
   <div class="container--sheet-selector">
     <select v-model="sheetUrl" v-on:change="handleChange" ref="sheetSelector">
-      <option data-key="" value="">-- Select Sheet --</option>
       <option
         v-for="sheet in sheetIds"
         v-bind:key="sheet.sheetId"
@@ -24,7 +23,7 @@ export default {
   data() {
     return {
       sheetIds,
-      sheetUrl: ""
+      sheetUrl: "Best%205%20AP%2FDrop%20%28JP%29" // JP default
     };
   },
   methods: {
@@ -41,6 +40,15 @@ export default {
         });
       }
     }
+  },
+  mounted: function() {
+    const firstOption = this.$refs.sheetSelector.querySelector("option");
+    const key = firstOption.getAttribute("data-key");
+    const value = firstOption.value;
+    this.$emit("handle-sheet-select", {
+      key,
+      value
+    });
   },
   watch: {
     savedSheetId: {

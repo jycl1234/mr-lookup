@@ -86,14 +86,14 @@
             v-if="isClosed"
             v-on:click="handleToggle"
             title="Expand"
-            >+</span
+            >◀</span
           >
           <span
             class="icon--toggle-mat"
             v-on:click="handleToggle"
             v-else
-            title="Close"
-            >-</span
+            title="Collapse"
+            >▼</span
           >
         </div>
         <div class="col-xs-12 col--selected-mat" v-else>
@@ -317,9 +317,9 @@ export default {
     }
     .icon--toggle-mat {
       position: absolute;
-      top: 0.2rem;
+      top: 0.5rem;
       right: 0;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       cursor: pointer;
     }
     .image--selected-mat {

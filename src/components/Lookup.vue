@@ -156,13 +156,16 @@ export default {
     handleClear() {
       this.results = null;
       this.searchLink = null;
-      this.savedSheetId = "";
+      this.savedSheetId = "843570146";
       this.matRanges = "";
       this.savedMatRanges = "";
-      this.region = "";
+      this.region = "JP";
       this.errorMsg = null;
       this.isClosed = false;
-      window.localStorage.removeItem("sheetUrl");
+      window.localStorage.setItem(
+        "sheetUrl",
+        "Best%205%20AP%2FDrop%20%28JP%29"
+      );
       window.localStorage.removeItem("matRanges");
       if (this.$route.path !== "/") {
         this.$router.push("/");
