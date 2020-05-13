@@ -22,14 +22,16 @@
         <div class="grid--cell col-xs-12 col-sm-3">
           <span class="responsive--header">Quest</span>
           &nbsp;
-          <a
-            class="link--wiki"
-            v-if="row.values[3].hyperlink"
-            v-bind:href="row.values[3].hyperlink"
-            target="_blank"
-            >{{ row.values[3].formattedValue }}</a
-          >
-          <span v-else>{{ row.values[3].formattedValue }}</span>
+          <div class="responsive--link">
+            <a
+              class="link--wiki"
+              v-if="row.values[3].hyperlink"
+              v-bind:href="row.values[3].hyperlink"
+              target="_blank"
+              >{{ row.values[3].formattedValue }}</a
+            >
+            <span v-else>{{ row.values[3].formattedValue }}</span>
+          </div>
         </div>
         <div class="grid--cell col-xs-12 col-sm-1">
           <span class="responsive--header">AP</span>
@@ -120,6 +122,15 @@ export default {
           display: inline-block;
           @media (min-width: 768px) {
             display: none;
+          }
+        }
+        .responsive--link {
+          width: 65%;
+          float: right;
+          @media (min-width: 768px) {
+            float: none;
+            display: block;
+            width: 100%;
           }
         }
       }
