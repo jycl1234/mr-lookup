@@ -1,8 +1,8 @@
-# fgo-lookup
+# magireco-lookup
 
-Simple web-based tool to look up Fate Grand/Order crowd-sourced dropsheet data.
+Simple web-based tool to look up Magia Record crowd-sourced dropsheet data.
 
-Dropsheet is here: https://docs.google.com/spreadsheets/d/1_SlTjrVRTgHgfS7sRqx4CeJMqlz687HdSlYqiW-JvQA/edit#gid=843570146
+Dropsheet is here: https://docs.google.com/spreadsheets/d/1-ww1HSWOVqfjG4UKShcAi9dc7vkgRsMxqWBtj0vn3mY/htmlview
 
 ## How to Use
 
@@ -22,4 +22,4 @@ There are two files that provide the source of truth for the API: `sheets.js` an
 
 `sheets.js` provides the list of sheets with the ID and URL-encoded name of the sheet itself. Note that the API does not actually use the ID.
 
-`mats.js` is a list of mats in Fate Grand Order, a starting cell (startRange), an ending cell (endRange), a rarity, and a type. The last two are used for filtering. You must ensure startRange and endRange correspond to the sheet, or this tool will not work.
+`mats.js` is a list of mats in Magia Record, a starting cell (startRange), an ending cell (endRange), a rarity, and a type. The last two are used for filtering. You must ensure startRange and endRange correspond to the sheet, or this tool will not work.

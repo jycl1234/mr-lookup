@@ -32,7 +32,7 @@ html * {
   font-family: "Quicksand", Arial, sans-serif !important;
 }
 #app {
-  background-image: url("./assets/chaldea-wp.png");
+  background-image: url("./assets/kamihama-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
