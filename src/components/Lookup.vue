@@ -3,6 +3,12 @@
     <h1>Magireco Dropsheet Lookup Tool</h1>
     <div class="row">
       <div class="col-sm-12">
+        <SheetSelector
+          v-on:handle-sheet-select="handleSheetSelect"
+          :savedSheetId="savedSheetId"
+        />
+      </div>
+      <div class="col-sm-12">
         <MatSelectorVisual
           v-on:handle-mat-select="handleMatSelect"
           v-on:handle-mat-toggle="handleMatToggle"
@@ -32,14 +38,11 @@
 
 <script>
 import axios from "axios";
-import {
-  baseUrl,
-  spreadsheetId,
-  spreadsheetNameMain,
-  spreadsheetSheetIdMain
-} from "../constants";
+import { baseUrl, spreadsheetId } from "../constants";
 import { apiKey } from "../apiKey";
+import { sheetIds } from "../sheets";
 import { mats } from "../mats";
+import SheetSelector from "./SheetSelector";
 import MatSelectorVisual from "./MatSelectorVisual";
 import Results from "./Results";
 import SearchLink from "./SearchLink";
@@ -48,6 +51,7 @@ import ErrorMsg from "./ErrorMsg";
 export default {
   name: "Lookup",
   components: {
+    SheetSelector,
     MatSelectorVisual,
     Results,
     SearchLink,
@@ -55,8 +59,12 @@ export default {
   },
   data() {
     return {
+      sheetIds,
       mats,
       matRanges: "",
+      sheetUrl: "",
+      sheetObj: {},
+      savedSheetId: "",
       savedMatRanges: "",
       isClosed: true,
       triggerReset: false,
@@ -67,6 +75,25 @@ export default {
     };
   },
   methods: {
+    handleSheetSelect(sheetObj) {
+      if (sheetObj && sheetObj.key !== "") {
+        this.savedSheetId = sheetObj.key;
+        this.sheetUrl = sheetObj.value;
+        window.localStorage.setItem("sheetUrl", sheetObj.value);
+        if (sheetObj.value.indexOf("JP") > -1) {
+          this.region = "JP";
+        } else {
+          this.region = "ALL";
+        }
+      } else {
+        this.savedSheetId = "";
+        this.sheetUrl = "";
+        window.localStorage.removeItem("sheetUrl");
+      }
+      if (this.sheetUrl !== "" && this.matRanges !== "") {
+        this.handleSubmit();
+      }
+    },
     handleMatSelect(matRanges) {
       if (matRanges !== "") {
         this.savedMatRanges = matRanges;
@@ -98,15 +125,16 @@ export default {
       } else {
         this.isLoading = true;
         this.isClosed = true;
-        const url = `${baseUrl}${spreadsheetId}?ranges=${spreadsheetNameMain}!${this.matRanges}&fields=sheets&key=${apiKey}`;
+        const url = `${baseUrl}${spreadsheetId}?ranges=${this.sheetUrl}!${this.matRanges}&fields=sheets&key=${apiKey}`;
         axios
           .get(url)
           .then(res => {
             this.isLoading = false;
             const { rowData } = res.data.sheets[0].data[0]; // lol
             if (rowData) {
+              console.log(rowData);
               // if there's no formattedValue on first line this is a blank entry
-              if (rowData[0].values[2].formattedValue) {
+              if (rowData[0].values[0].formattedValue) {
                 this.results = rowData;
               } else {
                 this.results = [];
@@ -123,11 +151,13 @@ export default {
     handleReset() {
       this.results = null;
       this.searchLink = null;
+      this.savedSheetId = "348175085";
       this.matRanges = "";
       this.savedMatRanges = "";
       this.errorMsg = null;
       this.isClosed = false;
       this.triggerReset = true;
+      window.localStorage.setItem("sheetUrl", "Main");
       window.localStorage.removeItem("matRanges");
       if (this.$route.path !== "/") {
         this.$router.push("/");
@@ -135,23 +165,36 @@ export default {
     },
     handleLink() {
       this.errorMsg = null;
-      if (this.savedMatRanges !== "") {
-        this.searchLink = `${window.location.origin}${window.location.pathname}#${spreadsheetSheetIdMain}/${this.savedMatRanges}`;
+      if (this.savedSheetId !== "" && this.savedMatRanges !== "") {
+        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.savedSheetId}/${this.savedMatRanges}`;
       } else {
-        this.errorMsg = "Please select a mat first.";
+        this.errorMsg = "Please select a sheet and a mat first.";
       }
     }
   },
   mounted: function() {
-    if (window.localStorage.getItem("matRanges") !== null) {
+    if (
+      window.localStorage.getItem("sheetUrl") !== null &&
+      window.localStorage.getItem("matRanges") !== null
+    ) {
+      this.sheetUrl = window.localStorage.getItem("sheetUrl");
       this.matRanges = window.localStorage.getItem("matRanges");
+      this.savedSheetId = this.sheetIds.find(
+        i => i.sheetUrl === this.sheetUrl
+      ).sheetId;
       this.savedMatRanges = window.localStorage.getItem("matRanges");
+      if (this.sheetUrl.indexOf("JP") > -1) {
+        this.region = "JP";
+      } else {
+        this.region = "ALL";
+      }
     } else {
       this.isClosed = false;
     }
     if (this.$route.path.length > 1) {
       const path = encodeURI(this.$route.path);
       const values = path.substr(1).split("/");
+      this.savedSheetId = values[0];
       this.matRanges = values[1];
       this.savedMatRanges = values[1];
       setTimeout(() => {
