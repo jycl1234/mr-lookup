@@ -39,7 +39,7 @@
           <label for="bronze">bronze</label>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-xs-3 col--label">
           <span class="wrapper--filter-label">Type</span>
         </div>
@@ -76,7 +76,7 @@
           />
           <label for="ascension">pieces/monus</label>
         </div>
-      </div>
+      </div> -->
       <div class="row">
         <div class="col-xs-12 col--selected-mat" v-if="selectedMat">
           <span class="span--label">Selected:</span>

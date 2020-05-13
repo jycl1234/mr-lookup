@@ -168,7 +168,7 @@ export default {
   max-width: 70rem;
   height: auto;
   text-align: center;
-  background: rgba(49, 57, 93, 0.9);
+  background: rgba(29, 120, 148, 0.8);
   box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.7);
   padding: 2rem;
   @media (min-width: 768px) {
@@ -178,7 +178,7 @@ export default {
     width: 70%;
   }
   h1 {
-    color: #b5b5b5;
+    color: #fff;
     margin: 0 0 1rem 0;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
     font-size: 1.4rem;
@@ -215,15 +215,15 @@ export default {
     margin: 0.5rem 0.5rem;
     padding: 0.25rem 2rem;
     border: 1px solid #fff;
-    background: #193268;
+    background: #29b6e1cc;
     color: #fff;
     -webkit-transition: all ease-in-out 0.25s;
     -o-transition: all ease-in-out 0.25s;
     transition: all ease-in-out 0.25s;
     &:hover {
-      border: 1px solid #193268;
+      border: 1px solid #29b6e1cc;
       background: #fff;
-      color: #193268;
+      color: #29b6e1cc;
     }
     @media (min-width: 992px) {
       margin-bottom: 0 0.5rem;
