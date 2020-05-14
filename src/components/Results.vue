@@ -4,39 +4,65 @@
     <div class="grid grid--no-result" v-else-if="results.length === 0">
       <span class="notification--no-result">No results found.</span>
     </div>
-    <div class="grid" v-else-if="results.length > 0">
-      <div class="row grid--row grid--header">
-        <div class="grid--cell col-xs-12 col-sm-2">Quest</div>
-        <div class="grid--cell col-xs-12 col-sm-2">AP Cost</div>
-        <div class="grid--cell col-xs-12 col-sm-2">Difficulty</div>
-        <div class="grid--cell col-xs-12 col-sm-2">Runs</div>
-        <div class="grid--cell col-xs-12 col-sm-2">AP/Drop</div>
-        <div class="grid--cell col-xs-12 col-sm-2">Drop Rate</div>
+    <div v-else-if="results.length > 0">
+      <div class="grid">
+        <h2 class="header--grid">Main Drops</h2>
+        <div class="row grid--row grid--header">
+          <div class="grid--cell col-xs-12 col-sm-2">Quest</div>
+          <div class="grid--cell col-xs-12 col-sm-2">AP Cost</div>
+          <div class="grid--cell col-xs-12 col-sm-2">Difficulty</div>
+          <div class="grid--cell col-xs-12 col-sm-2">Runs</div>
+          <div class="grid--cell col-xs-12 col-sm-2">AP/Drop</div>
+          <div class="grid--cell col-xs-12 col-sm-2">Drop Rate</div>
+        </div>
+        <div class="row grid--row" v-for="row in results" v-bind:key="row[0]">
+          <div class="grid--cell col-xs-12 col-sm-2">
+            <span class="responsive--header">Quest</span>
+            {{ row.values[0].formattedValue }}
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            <span class="responsive--header">AP Cost</span>
+            {{ row.values[1].formattedValue }}
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            <span class="responsive--header">Difficulty</span>
+            {{ row.values[2].formattedValue }}
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            <span class="responsive--header">Runs</span>
+            {{ row.values[3].formattedValue }}
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            <span class="responsive--header">APD</span>
+            {{ row.values[4].formattedValue }}
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            <span class="responsive--header">Drop Rate</span>
+            {{ row.values[5].formattedValue }}
+          </div>
+        </div>
       </div>
-      <div class="row grid--row" v-for="row in results" v-bind:key="row[0]">
-        <div class="grid--cell col-xs-12 col-sm-2">
-          <span class="responsive--header">Quest</span>
-          {{ row.values[0].formattedValue }}
-        </div>
-        <div class="grid--cell col-xs-12 col-sm-2">
-          <span class="responsive--header">AP Cost</span>
-          {{ row.values[1].formattedValue }}
-        </div>
-        <div class="grid--cell col-xs-12 col-sm-2">
-          <span class="responsive--header">Difficulty</span>
-          {{ row.values[2].formattedValue }}
-        </div>
-        <div class="grid--cell col-xs-12 col-sm-2">
-          <span class="responsive--header">Runs</span>
-          {{ row.values[3].formattedValue }}
-        </div>
-        <div class="grid--cell col-xs-12 col-sm-2">
-          <span class="responsive--header">APD</span>
-          {{ row.values[4].formattedValue }}
-        </div>
-        <div class="grid--cell col-xs-12 col-sm-2">
-          <span class="responsive--header">Drop Rate</span>
-          {{ row.values[5].formattedValue }}
+      <div class="grid">
+        <h2 class="header--grid">Other Drops</h2>
+        <div class="row grid--row" v-for="row in results" v-bind:key="row[0]">
+          <div class="grid--cell col-xs-12 col-sm-2">
+            <!-- image tag goes here {{ row.values[6].formattedValue }} -->
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            {{ row.values[7].formattedValue }}
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            <!-- image tag goes here {{ row.values[8].formattedValue }} -->
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            {{ row.values[9].formattedValue }}
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            <!-- image tag goes here {{ row.values[10].formattedValue }} -->
+          </div>
+          <div class="grid--cell col-xs-12 col-sm-2">
+            {{ row.values[11].formattedValue }}
+          </div>
         </div>
       </div>
     </div>
@@ -70,6 +96,9 @@ export default {
     }
     @media (min-width: 992px) {
       font-size: 0.85rem;
+    }
+    .header--grid {
+      margin: 0 0 1rem 0;
     }
     .grid--row {
       border-bottom: 1px dotted #8f8f8f;

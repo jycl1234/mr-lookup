@@ -89,7 +89,7 @@ export default {
         this.sheetUrl = sheetPayload.value.sheetId;
         this.sheetType = sheetPayload.value.sheetType;
         window.localStorage.setItem("sheetUrl", sheetPayload.value.sheetId);
-        this.resetMatFields(); // needed due to clashing ranges across sheets; breaks link feature
+        this.resetMatFields(); // needed due to clashing ranges across sheets
       } else {
         this.sheetId = "";
         this.sheetUrl = "";
@@ -133,6 +133,7 @@ export default {
             this.isLoading = false;
             const { rowData } = res.data.sheets[0].data[0]; // lol
             if (rowData) {
+              console.log(rowData[1].values);
               // if there's no formattedValue on first line this is a blank entry
               if (rowData[0].values[0].formattedValue) {
                 this.results = rowData;
@@ -231,7 +232,6 @@ export default {
   .container--button {
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
     -webkit-transition: all ease-in-out 0.25s;
     -o-transition: all ease-in-out 0.25s;
     transition: all ease-in-out 0.25s;
