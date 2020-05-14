@@ -39,44 +39,6 @@
           <label for="bronze">bronze</label>
         </div>
       </div>
-      <!-- <div class="row">
-        <div class="col-xs-3 col--label">
-          <span class="wrapper--filter-label">Type</span>
-        </div>
-        <div class="col-xs-3 col--filter">
-          <input
-            v-model="matTypeFilter"
-            v-on:change="handleFilter"
-            type="checkbox"
-            id="mat"
-            class="input--checkbox-filter mat"
-            value="mat"
-          />
-          <label for="mat">mat</label>
-        </div>
-        <div class="col-xs-3 col--filter">
-          <input
-            v-model="matTypeFilter"
-            v-on:change="handleFilter"
-            type="checkbox"
-            id="skill"
-            class="input--checkbox-filter skill"
-            value="skill"
-          />
-          <label for="skill">gems</label>
-        </div>
-        <div class="col-xs-3 col--filter">
-          <input
-            v-model="matTypeFilter"
-            v-on:change="handleFilter"
-            type="checkbox"
-            id="ascension"
-            class="input--checkbox-filter ascension"
-            value="ascension"
-          />
-          <label for="ascension">pieces/monus</label>
-        </div>
-      </div> -->
       <div class="row">
         <div class="col-xs-12 col--selected-mat" v-if="selectedMat">
           <span class="span--label">Selected:</span>
@@ -132,7 +94,7 @@ export default {
   name: "MatSelectorVisual",
   props: {
     savedMatRanges: String,
-    region: String,
+    sheetType: String,
     isClosed: Boolean,
     triggerReset: Boolean
   },
@@ -144,8 +106,7 @@ export default {
       isSelected: null,
       selectedMat: null,
       selectedMatPath: null,
-      matRarityFilter: ["gold", "silver", "bronze"],
-      matTypeFilter: ["mat", "skill", "ascension"]
+      matRarityFilter: ["gold", "silver", "bronze"]
     };
   },
   methods: {
@@ -165,34 +126,23 @@ export default {
       }
     },
     handleFilter() {
-      let newMatsRegionFiltered = [];
+      console.log("handleFilter", this.sheetType);
       let newMatsRarityFiltered = [];
       let newMatsTypeFiltered = [];
-
-      // remove unavailable mats
-
-      if (this.region === "" || this.region === "JP") {
-        newMatsRegionFiltered = mats;
-      } else {
-        let filtered = mats.filter(mat => mat.availability === this.region);
-        newMatsRegionFiltered = [...newMatsRegionFiltered, ...filtered];
-      }
 
       // sort by rarity
 
       for (let [, value] of Object.entries(this.matRarityFilter)) {
-        let filtered = newMatsRegionFiltered.filter(
-          mat => mat.rarity === value
-        );
+        let filtered = mats.filter(mat => mat.rarity === value);
         newMatsRarityFiltered = [...newMatsRarityFiltered, ...filtered];
       }
 
       // sort by type
 
-      for (let [, value] of Object.entries(this.matTypeFilter)) {
-        let filtered = newMatsRarityFiltered.filter(mat => mat.type === value);
-        newMatsTypeFiltered = [...newMatsTypeFiltered, ...filtered];
-      }
+      let typeFiltered = newMatsRarityFiltered.filter(
+        mat => mat.type === this.sheetType
+      );
+      newMatsTypeFiltered = [...newMatsTypeFiltered, ...typeFiltered];
 
       this.filteredMats = newMatsTypeFiltered;
 
@@ -232,7 +182,7 @@ export default {
         }
       }
     },
-    region: {
+    sheetType: {
       immediate: false,
       handler() {
         this.handleFilter();
@@ -245,7 +195,6 @@ export default {
         this.selectedMatPath = null;
         this.isSelected = null;
         this.matRarityFilter = ["gold", "silver", "bronze"];
-        this.matTypeFilter = ["mat", "skill", "ascension"];
         this.handleFilter();
         this.$emit("handle-trigger-reset");
       }

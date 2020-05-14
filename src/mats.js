@@ -262,5 +262,29 @@ export const mats = [
     rarity: "gold",
     type: "mat",
     filename: "item_gift_557"
+  },
+  {
+    name: "Rainbow Orb",
+    startRange: "O14",
+    endRange: "Z18",
+    rarity: "gold",
+    type: "orbs",
+    filename: "item_gift_551"
+  },
+  {
+    name: "Flame Book",
+    startRange: "O14",
+    endRange: "Z18",
+    rarity: "bronze",
+    type: "books",
+    filename: "item_gift_211"
+  },
+  {
+    name: "Flame Gem",
+    startRange: "O14",
+    endRange: "Z18",
+    rarity: "bronze",
+    type: "gems",
+    filename: "Flame_Gem"
   }
 ];

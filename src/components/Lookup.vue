@@ -13,6 +13,7 @@
           v-on:handle-mat-select="handleMatSelect"
           v-on:handle-mat-toggle="handleMatToggle"
           v-on:handle-trigger-reset="handleTriggerReset"
+          :sheetType="sheetType"
           :savedMatRanges="savedMatRanges"
           :isClosed="isClosed"
           :triggerReset="triggerReset"
@@ -63,7 +64,11 @@ export default {
       mats,
       matRanges: "",
       sheetUrl: "",
-      sheetObj: {},
+      sheetType: "",
+      sheetObj: {
+        sheetId: "348175085",
+        sheetType: "mat"
+      },
       savedSheetId: "",
       savedMatRanges: "",
       isClosed: true,
@@ -78,16 +83,13 @@ export default {
     handleSheetSelect(sheetObj) {
       if (sheetObj && sheetObj.key !== "") {
         this.savedSheetId = sheetObj.key;
-        this.sheetUrl = sheetObj.value;
-        window.localStorage.setItem("sheetUrl", sheetObj.value);
-        if (sheetObj.value.indexOf("JP") > -1) {
-          this.region = "JP";
-        } else {
-          this.region = "ALL";
-        }
+        this.sheetUrl = sheetObj.value.sheetId;
+        this.sheetType = sheetObj.value.sheetType;
+        window.localStorage.setItem("sheetUrl", sheetObj.value.sheetId);
       } else {
         this.savedSheetId = "";
         this.sheetUrl = "";
+        this.sheetType = "";
         window.localStorage.removeItem("sheetUrl");
       }
       if (this.sheetUrl !== "" && this.matRanges !== "") {
@@ -132,7 +134,6 @@ export default {
             this.isLoading = false;
             const { rowData } = res.data.sheets[0].data[0]; // lol
             if (rowData) {
-              console.log(rowData);
               // if there's no formattedValue on first line this is a blank entry
               if (rowData[0].values[0].formattedValue) {
                 this.results = rowData;
@@ -152,6 +153,7 @@ export default {
       this.results = null;
       this.searchLink = null;
       this.savedSheetId = "348175085";
+      this.sheetType = "Main";
       this.matRanges = "";
       this.savedMatRanges = "";
       this.errorMsg = null;
@@ -183,11 +185,6 @@ export default {
         i => i.sheetUrl === this.sheetUrl
       ).sheetId;
       this.savedMatRanges = window.localStorage.getItem("matRanges");
-      if (this.sheetUrl.indexOf("JP") > -1) {
-        this.region = "JP";
-      } else {
-        this.region = "ALL";
-      }
     } else {
       this.isClosed = false;
     }
@@ -233,7 +230,7 @@ export default {
     }
   }
   .overlay--loading {
-    color: #b5b5b5;
+    color: #fff;
     margin-top: 4rem;
     font-size: 2rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);

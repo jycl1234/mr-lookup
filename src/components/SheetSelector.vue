@@ -6,6 +6,7 @@
         v-bind:key="sheet.sheetId"
         v-bind:value="sheet.sheetUrl"
         v-bind:data-key="sheet.sheetId"
+        v-bind:data-type="sheet.sheetType"
         >{{ sheet.title }}</option
       >
     </select>
@@ -23,7 +24,7 @@ export default {
   data() {
     return {
       sheetIds,
-      sheetUrl: "Best%205%20AP%2FDrop%20%28JP%29" // JP default
+      sheetUrl: "Main"
     };
   },
   methods: {
@@ -31,7 +32,12 @@ export default {
       if (e.target.value !== "") {
         this.$emit("handle-sheet-select", {
           key: e.target.querySelector(":checked").getAttribute("data-key"),
-          value: e.target.value
+          value: {
+            sheetId: e.target.value,
+            sheetType: e.target
+              .querySelector(":checked")
+              .getAttribute("data-type")
+          }
         });
       } else {
         this.$emit("handle-sheet-select", {
@@ -44,23 +50,30 @@ export default {
   mounted: function() {
     const firstOption = this.$refs.sheetSelector.querySelector("option");
     const key = firstOption.getAttribute("data-key");
-    const value = firstOption.value;
+    const payload = {
+      sheetId: firstOption.value,
+      sheetType: firstOption.getAttribute("data-type")
+    };
     this.$emit("handle-sheet-select", {
       key,
-      value
+      value: payload
     });
   },
   watch: {
     savedSheetId: {
       immediate: false,
       handler(val) {
-        const valueFromSearch = this.$refs.sheetSelector.querySelector(
+        const selectedOption = this.$refs.sheetSelector.querySelector(
           'option[data-key="' + val + '"'
-        ).value;
-        this.sheetUrl = valueFromSearch;
+        );
+        this.sheetUrl = selectedOption.value;
+        const payload = {
+          sheetId: selectedOption.value,
+          sheetType: selectedOption.dataset.type
+        };
         this.$emit("handle-sheet-select", {
           key: val,
-          value: valueFromSearch
+          value: payload
         });
       }
     }

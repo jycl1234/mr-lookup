@@ -3,33 +3,30 @@ export const sheetIds = [
     title: "Main",
     sheetId: "348175085",
     sheetUrl: "Main",
-    type: "mat"
+    sheetType: "mat"
   },
   {
     title: "Rates",
     sheetId: "675601580",
     sheetUrl: "Rates",
-    type: "mat"
+    sheetType: "mat"
+  },
+  {
+    title: "Orbs",
+    sheetId: "295417020",
+    sheetUrl: "Orbs",
+    sheetType: "orbs"
+  },
+  {
+    title: "Books",
+    sheetId: "1841523652",
+    sheetUrl: "Books",
+    sheetType: "books"
+  },
+  {
+    title: "Gems",
+    sheetId: "1373804106",
+    sheetUrl: "Gems",
+    sheetType: "gems"
   }
 ];
-
-// emit event from SheetSelector to update MatSelector to filter based on type property
-
-//   {
-//     title: "Orbs",
-//     sheetId: "295417020",
-//     sheetUrl: "Orbs",
-//     type: "orbs"
-//   },
-//   {
-//     title: "Gems",
-//     sheetId: "1373804106",
-//     sheetUrl: "Gems",
-//     type: "gems"
-//   },
-//   {
-//     title: "Books",
-//     sheetId: "1841523652",
-//     sheetUrl: "Books",
-//     type: "books"
-//   }

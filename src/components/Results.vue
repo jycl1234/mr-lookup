@@ -7,10 +7,10 @@
     <div class="grid" v-else-if="results.length > 0">
       <div class="row grid--row grid--header">
         <div class="grid--cell col-xs-12 col-sm-2">Quest</div>
-        <div class="grid--cell col-xs-12 col-sm-3">AP Cost</div>
-        <div class="grid--cell col-xs-12 col-sm-1">Difficulty</div>
-        <div class="grid--cell col-xs-12 col-sm-1">Runs</div>
-        <div class="grid--cell col-xs-12 col-sm-1">AP/Drop</div>
+        <div class="grid--cell col-xs-12 col-sm-2">AP Cost</div>
+        <div class="grid--cell col-xs-12 col-sm-2">Difficulty</div>
+        <div class="grid--cell col-xs-12 col-sm-2">Runs</div>
+        <div class="grid--cell col-xs-12 col-sm-2">AP/Drop</div>
         <div class="grid--cell col-xs-12 col-sm-2">Drop Rate</div>
       </div>
       <div class="row grid--row" v-for="row in results" v-bind:key="row[0]">
@@ -18,19 +18,19 @@
           <span class="responsive--header">Quest</span>
           {{ row.values[0].formattedValue }}
         </div>
-        <div class="grid--cell col-xs-12 col-sm-3">
+        <div class="grid--cell col-xs-12 col-sm-2">
           <span class="responsive--header">AP Cost</span>
           {{ row.values[1].formattedValue }}
         </div>
-        <div class="grid--cell col-xs-12 col-sm-1">
+        <div class="grid--cell col-xs-12 col-sm-2">
           <span class="responsive--header">Difficulty</span>
           {{ row.values[2].formattedValue }}
         </div>
-        <div class="grid--cell col-xs-12 col-sm-1">
+        <div class="grid--cell col-xs-12 col-sm-2">
           <span class="responsive--header">Runs</span>
           {{ row.values[3].formattedValue }}
         </div>
-        <div class="grid--cell col-xs-12 col-sm-1">
+        <div class="grid--cell col-xs-12 col-sm-2">
           <span class="responsive--header">APD</span>
           {{ row.values[4].formattedValue }}
         </div>
