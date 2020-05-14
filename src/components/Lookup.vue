@@ -24,9 +24,10 @@
         <button class="button--reset" type="button" v-on:click="handleReset()">
           reset
         </button>
-        <button class="button--link" type="button" v-on:click="handleLink()">
+        <!-- temporarily removed link -- causes breaking interactions w/sheet select -->
+        <!-- <button class="button--link" type="button" v-on:click="handleLink()">
           link
-        </button>
+        </button> -->
       </div>
     </div>
     <SearchLink :searchLink="searchLink" />
@@ -65,10 +66,6 @@ export default {
       matRanges: "",
       sheetUrl: "",
       sheetType: "",
-      sheetObj: {
-        sheetId: "348175085",
-        sheetType: "mat"
-      },
       savedSheetId: "",
       savedMatRanges: "",
       isClosed: true,
@@ -80,12 +77,20 @@ export default {
     };
   },
   methods: {
-    handleSheetSelect(sheetObj) {
-      if (sheetObj && sheetObj.key !== "") {
-        this.savedSheetId = sheetObj.key;
-        this.sheetUrl = sheetObj.value.sheetId;
-        this.sheetType = sheetObj.value.sheetType;
-        window.localStorage.setItem("sheetUrl", sheetObj.value.sheetId);
+    resetMatFields() {
+      this.savedMatRanges = "";
+      this.matRanges = "";
+      window.localStorage.removeItem("matRanges");
+      this.isClosed = false;
+      this.results = null;
+    },
+    handleSheetSelect(sheetPayload) {
+      if (sheetPayload && sheetPayload.key !== "") {
+        this.savedSheetId = sheetPayload.key;
+        this.sheetUrl = sheetPayload.value.sheetId;
+        this.sheetType = sheetPayload.value.sheetType;
+        window.localStorage.setItem("sheetUrl", sheetPayload.value.sheetId);
+        this.resetMatFields(); // needed due to clashing ranges across sheets; breaks link feature
       } else {
         this.savedSheetId = "";
         this.sheetUrl = "";
@@ -102,11 +107,7 @@ export default {
         this.matRanges = matRanges;
         window.localStorage.setItem("matRanges", matRanges);
       } else {
-        this.savedMatRanges = "";
-        this.matRanges = "";
-        window.localStorage.removeItem("matRanges");
-        this.isClosed = false;
-        this.results = null;
+        this.resetMatFields();
       }
       if (this.matRanges !== "") {
         this.handleSubmit();
@@ -150,17 +151,13 @@ export default {
       }
     },
     handleReset() {
-      this.results = null;
+      this.resetMatFields();
       this.searchLink = null;
       this.savedSheetId = "348175085";
-      this.sheetType = "Main";
-      this.matRanges = "";
-      this.savedMatRanges = "";
+      this.sheetType = "mat";
       this.errorMsg = null;
-      this.isClosed = false;
       this.triggerReset = true;
       window.localStorage.setItem("sheetUrl", "Main");
-      window.localStorage.removeItem("matRanges");
       if (this.$route.path !== "/") {
         this.$router.push("/");
       }

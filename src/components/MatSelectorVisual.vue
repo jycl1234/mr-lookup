@@ -126,7 +126,6 @@ export default {
       }
     },
     handleFilter() {
-      console.log("handleFilter", this.sheetType);
       let newMatsRarityFiltered = [];
       let newMatsTypeFiltered = [];
 
@@ -151,17 +150,6 @@ export default {
       newMatsTypeFiltered = newMatsTypeFiltered.sort((a, b) =>
         a.filename > b.filename ? 1 : -1
       );
-
-      // double check mat still exists, otherwise reset
-
-      if (
-        this.filteredMats.filter(
-          mat => `${mat.startRange}:${mat.endRange}` === this.isSelected
-        ).length <= 0
-      ) {
-        this.isSelected = "";
-        this.$emit("handle-mat-select", "");
-      }
     }
   },
   watch: {
@@ -185,6 +173,9 @@ export default {
     sheetType: {
       immediate: false,
       handler() {
+        this.selectedMat = null;
+        this.selectedMatPath = null;
+        this.isSelected = null;
         this.handleFilter();
       }
     },
