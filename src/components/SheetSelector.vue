@@ -7,7 +7,7 @@
         v-bind:value="sheet.sheetUrl"
         v-bind:data-key="sheet.sheetId"
         v-bind:data-type="sheet.sheetType"
-        >{{ sheet.title }}</option
+        >{{ sheet.display }}</option
       >
     </select>
   </div>
