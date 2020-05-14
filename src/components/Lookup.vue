@@ -133,7 +133,6 @@ export default {
             this.isLoading = false;
             const { rowData } = res.data.sheets[0].data[0]; // lol
             if (rowData) {
-              console.log(rowData[1].values);
               // if there's no formattedValue on first line this is a blank entry
               if (rowData[0].values[0].formattedValue) {
                 this.results = rowData;
