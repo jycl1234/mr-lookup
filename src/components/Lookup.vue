@@ -5,7 +5,7 @@
       <div class="col-sm-12">
         <SheetSelector
           v-on:handle-sheet-select="handleSheetSelect"
-          :savedSheetId="savedSheetId"
+          :sheetId="sheetId"
         />
       </div>
       <div class="col-sm-12">
@@ -64,7 +64,7 @@ export default {
       mats,
       sheetUrl: "",
       sheetObj: {},
-      savedSheetId: "",
+      sheetId: "",
       matRanges: "",
       savedMatRanges: "",
       isClosed: true,
@@ -79,7 +79,7 @@ export default {
   methods: {
     handleSheetSelect(sheetObj) {
       if (sheetObj && sheetObj.key !== "") {
-        this.savedSheetId = sheetObj.key;
+        this.sheetId = sheetObj.key;
         this.sheetUrl = sheetObj.value;
         window.localStorage.setItem("sheetUrl", sheetObj.value);
         if (sheetObj.value.indexOf("JP") > -1) {
@@ -88,7 +88,7 @@ export default {
           this.region = "ALL";
         }
       } else {
-        this.savedSheetId = "";
+        this.sheetId = "";
         this.sheetUrl = "";
         window.localStorage.removeItem("sheetUrl");
       }
@@ -155,7 +155,7 @@ export default {
     handleReset() {
       this.results = null;
       this.searchLink = null;
-      this.savedSheetId = "843570146";
+      this.sheetId = "843570146";
       this.matRanges = "";
       this.savedMatRanges = "";
       this.region = "JP";
@@ -173,8 +173,8 @@ export default {
     },
     handleLink() {
       this.errorMsg = null;
-      if (this.savedSheetId !== "" && this.savedMatRanges !== "") {
-        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.savedSheetId}/${this.savedMatRanges}`;
+      if (this.sheetId !== "" && this.savedMatRanges !== "") {
+        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.sheetId}/${this.savedMatRanges}`;
       } else {
         this.errorMsg = "Please select a sheet and a mat first.";
       }
@@ -187,7 +187,7 @@ export default {
     ) {
       this.sheetUrl = window.localStorage.getItem("sheetUrl");
       this.matRanges = window.localStorage.getItem("matRanges");
-      this.savedSheetId = this.sheetIds.find(
+      this.sheetId = this.sheetIds.find(
         i => i.sheetUrl === this.sheetUrl
       ).sheetId;
       this.savedMatRanges = window.localStorage.getItem("matRanges");
@@ -202,7 +202,7 @@ export default {
     if (this.$route.path.length > 1) {
       const path = encodeURI(this.$route.path);
       const values = path.substr(1).split("/");
-      this.savedSheetId = values[0];
+      this.sheetId = values[0];
       this.matRanges = values[1];
       this.savedMatRanges = values[1];
       setTimeout(() => {
