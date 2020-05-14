@@ -14,7 +14,7 @@
           v-on:handle-mat-toggle="handleMatToggle"
           v-on:handle-trigger-reset="handleTriggerReset"
           :sheetType="sheetType"
-          :savedMatRanges="savedMatRanges"
+          :matRanges="matRanges"
           :isClosed="isClosed"
           :triggerReset="triggerReset"
         />
@@ -68,7 +68,6 @@ export default {
       sheetObj: {},
       sheetId: "",
       matRanges: "",
-      savedMatRanges: "",
       isClosed: true,
       triggerReset: false,
       results: null,
@@ -79,7 +78,6 @@ export default {
   },
   methods: {
     resetMatFields() {
-      this.savedMatRanges = "";
       this.matRanges = "";
       window.localStorage.removeItem("matRanges");
       this.isClosed = false;
@@ -104,7 +102,6 @@ export default {
     },
     handleMatSelect(matRanges) {
       if (matRanges !== "") {
-        this.savedMatRanges = matRanges;
         this.matRanges = matRanges;
         window.localStorage.setItem("matRanges", matRanges);
       } else {
@@ -165,8 +162,8 @@ export default {
     },
     handleLink() {
       this.errorMsg = null;
-      if (this.sheetId !== "" && this.savedMatRanges !== "") {
-        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.sheetId}/${this.savedMatRanges}`;
+      if (this.sheetId !== "" && this.matRanges !== "") {
+        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.sheetId}/${this.matRanges}`;
       } else {
         this.errorMsg = "Please select a sheet and a mat first.";
       }
@@ -182,7 +179,6 @@ export default {
       this.sheetId = this.sheetIds.find(
         i => i.sheetUrl === this.sheetUrl
       ).sheetId;
-      this.savedMatRanges = window.localStorage.getItem("matRanges");
     } else {
       this.isClosed = false;
     }
@@ -191,7 +187,6 @@ export default {
       const values = path.substr(1).split("/");
       this.sheetId = values[0];
       this.matRanges = values[1];
-      this.savedMatRanges = values[1];
       setTimeout(() => {
         this.handleSubmit();
       }, 100);

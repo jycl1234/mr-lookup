@@ -93,7 +93,7 @@ import { mats } from "../mats";
 export default {
   name: "MatSelectorVisual",
   props: {
-    savedMatRanges: String,
+    matRanges: String,
     sheetType: String,
     isClosed: Boolean,
     triggerReset: Boolean
@@ -153,16 +153,15 @@ export default {
     }
   },
   watch: {
-    savedMatRanges: {
+    matRanges: {
       immediate: false,
       handler() {
-        if (this.savedMatRanges !== "") {
-          this.isSelected = this.savedMatRanges;
+        if (this.matRanges !== "") {
+          this.isSelected = this.matRanges;
           this.selectedMat = this.filteredMats.filter(
             mat => `${mat.startRange}:${mat.endRange}` === this.isSelected
           );
           this.selectedMatPath = this.getUrl(this.selectedMat[0]);
-          this.$emit("handle-mat-select", this.savedMatRanges);
         } else {
           this.selectedMat = null;
           this.selectedMatPath = null;
