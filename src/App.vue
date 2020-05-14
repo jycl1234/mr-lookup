@@ -7,9 +7,10 @@
 
 <script>
 // TODO
+// - fix architecture issue with changing sheets to another type and losing savedMatRange
+// - restore link functionality
 // - dynamically update url on search param updates
 // - autocopy on get link focus
-// - sort mats by order of appearance in story (unlikely)
 </script>
 
 <style lang="scss">
