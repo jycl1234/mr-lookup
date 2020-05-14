@@ -8,6 +8,7 @@
 <script>
 // TODO
 // - fix architecture issue with changing sheets to another type and losing savedMatRange
+// - add other drops table
 // - restore link functionality
 // - dynamically update url on search param updates
 // - autocopy on get link focus
