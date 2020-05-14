@@ -45,23 +45,57 @@
       <div class="grid">
         <h2 class="header--grid">Other Drops</h2>
         <div class="row grid--row" v-for="row in results" v-bind:key="row[0]">
-          <div class="grid--cell col-xs-12 col-sm-2">
-            <!-- image tag goes here {{ row.values[6].formattedValue }} -->
+          <div
+            class="grid--cell other col-xs-12 col-sm-2"
+            v-if="row.values[0].formattedValue"
+          >
+            <span class="responsive--header">Quest</span>
+            {{ row.values[0].formattedValue }}
           </div>
-          <div class="grid--cell col-xs-12 col-sm-2">
-            {{ row.values[7].formattedValue }}
+          <div
+            class="grid--cell other col-xs-2 col-sm-1"
+            v-if="row.values[7].formattedValue"
+          >
+            <img
+              class="image--mat"
+              v-bind:src="getUrl(row.values[7].formattedValue)"
+            />
           </div>
-          <div class="grid--cell col-xs-12 col-sm-2">
-            <!-- image tag goes here {{ row.values[8].formattedValue }} -->
+          <div
+            class="grid--cell other col-xs-10 col-sm-2"
+            v-if="row.values[8].formattedValue"
+          >
+            <span>{{ row.values[8].formattedValue }}</span>
           </div>
-          <div class="grid--cell col-xs-12 col-sm-2">
-            {{ row.values[9].formattedValue }}
+          <div
+            class="grid--cell other col-xs-2 col-sm-1"
+            v-if="row.values[10].formattedValue"
+          >
+            <img
+              class="image--mat"
+              v-bind:src="getUrl(row.values[10].formattedValue)"
+            />
           </div>
-          <div class="grid--cell col-xs-12 col-sm-2">
-            <!-- image tag goes here {{ row.values[10].formattedValue }} -->
+          <div
+            class="grid--cell other col-xs-10 col-sm-2"
+            v-if="row.values[11].formattedValue"
+          >
+            <span>{{ row.values[11].formattedValue }}</span>
           </div>
-          <div class="grid--cell col-xs-12 col-sm-2">
-            {{ row.values[11].formattedValue }}
+          <div
+            class="grid--cell other col-xs-2 col-sm-1"
+            v-if="row.values[13].formattedValue"
+          >
+            <img
+              class="image--mat"
+              v-bind:src="getUrl(row.values[13].formattedValue)"
+            />
+          </div>
+          <div
+            class="grid--cell other col-xs-10 col-sm-2"
+            v-if="row.values[14].formattedValue"
+          >
+            <span>{{ row.values[14].formattedValue }}</span>
           </div>
         </div>
       </div>
@@ -77,7 +111,11 @@ export default {
       type: Array
     }
   },
-  methods: {}
+  methods: {
+    getUrl(filename) {
+      return require("@/assets/" + filename + ".png");
+    }
+  }
 };
 </script>
 
@@ -121,6 +159,18 @@ export default {
         padding: 0 0.1rem;
         margin: 0 0 0.4rem 0;
         color: #000;
+        &.other {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          height: 2.2rem;
+          @media (min-width: 768px) {
+            display: block;
+          }
+          .responsive--header {
+            width: 16.66666667%;
+          }
+        }
         a {
           color: rgba(49, 57, 93, 1);
         }
@@ -143,6 +193,10 @@ export default {
             display: block;
             width: 100%;
           }
+        }
+        .image--mat {
+          width: 2.2rem;
+          border: 2px solid transparent;
         }
       }
     }

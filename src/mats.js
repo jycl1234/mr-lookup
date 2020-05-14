@@ -2,7 +2,7 @@ export const mats = [
   {
     name: "Swallowtail Feather",
     startRange: "O14",
-    endRange: "Z18",
+    endRange: "AC18",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_301"
@@ -10,7 +10,7 @@ export const mats = [
   {
     name: "Mirrors Invitation",
     startRange: "O26",
-    endRange: "Z30",
+    endRange: "AC30",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_302"
@@ -18,7 +18,7 @@ export const mats = [
   {
     name: "Bunny Ear Wrapping Paper",
     startRange: "O38",
-    endRange: "Z42",
+    endRange: "AC42",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_303"
@@ -26,7 +26,7 @@ export const mats = [
   {
     name: "Sheep Warhorn",
     startRange: "O50",
-    endRange: "Z54",
+    endRange: "AC54",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_304"
@@ -34,7 +34,7 @@ export const mats = [
   {
     name: "Rooftop Key",
     startRange: "O62",
-    endRange: "Z66",
+    endRange: "AC66",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_305"
@@ -42,7 +42,7 @@ export const mats = [
   {
     name: "Pendulum Screw",
     startRange: "O74",
-    endRange: "Z78",
+    endRange: "AC78",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_306"
@@ -50,7 +50,7 @@ export const mats = [
   {
     name: "Babysitter's Pedestal",
     startRange: "O86",
-    endRange: "Z90",
+    endRange: "AC90",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_307"
@@ -58,7 +58,7 @@ export const mats = [
   {
     name: "Saintly Fuzzball",
     startRange: "O98",
-    endRange: "Z102",
+    endRange: "AC102",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_308"
@@ -66,7 +66,7 @@ export const mats = [
   {
     name: "Rubber Swim Tube",
     startRange: "O110",
-    endRange: "Z114",
+    endRange: "AC114",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_309"
@@ -74,7 +74,7 @@ export const mats = [
   {
     name: "Vagrant's Stake",
     startRange: "O122",
-    endRange: "Z126",
+    endRange: "AC126",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_310"
@@ -82,7 +82,7 @@ export const mats = [
   {
     name: "Sandbox Shell",
     startRange: "O134",
-    endRange: "Z138",
+    endRange: "AC138",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_401"
@@ -90,7 +90,7 @@ export const mats = [
   {
     name: "Padlock Chain",
     startRange: "O146",
-    endRange: "Z150",
+    endRange: "AC150",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_402"
@@ -98,7 +98,7 @@ export const mats = [
   {
     name: "Plaque Cord",
     startRange: "O158",
-    endRange: "Z162",
+    endRange: "AC162",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_403"
@@ -106,7 +106,7 @@ export const mats = [
   {
     name: "Owl Bucket",
     startRange: "O170",
-    endRange: "Z174",
+    endRange: "AC174",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_404"
@@ -114,7 +114,7 @@ export const mats = [
   {
     name: "Mail Goats' Glider",
     startRange: "O182",
-    endRange: "Z186",
+    endRange: "AC186",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_405"
@@ -122,7 +122,7 @@ export const mats = [
   {
     name: "Staff's Key Switch",
     startRange: "O194",
-    endRange: "Z198",
+    endRange: "AC198",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_406"
@@ -130,7 +130,7 @@ export const mats = [
   {
     name: "Mascot's Mane",
     startRange: "O206",
-    endRange: "Z210",
+    endRange: "AC210",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_407"
@@ -138,7 +138,7 @@ export const mats = [
   {
     name: "Bear's Scarf",
     startRange: "O218",
-    endRange: "Z222",
+    endRange: "AC222",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_408"
@@ -146,7 +146,7 @@ export const mats = [
   {
     name: "Sandbox Shovel",
     startRange: "O230",
-    endRange: "Z234",
+    endRange: "AC234",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_501"
@@ -154,7 +154,7 @@ export const mats = [
   {
     name: "Staircase Monument",
     startRange: "O242",
-    endRange: "Z246",
+    endRange: "AC246",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_502"
@@ -162,7 +162,7 @@ export const mats = [
   {
     name: "Commoner's Horse Wheel",
     startRange: "O254",
-    endRange: "Z258",
+    endRange: "AC258",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_503"
@@ -170,7 +170,7 @@ export const mats = [
   {
     name: "Rhyton's Ribbon",
     startRange: "O266",
-    endRange: "Z270",
+    endRange: "AC270",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_504"
@@ -178,7 +178,7 @@ export const mats = [
   {
     name: "AI Code",
     startRange: "O278",
-    endRange: "Z282",
+    endRange: "AC282",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_505"
@@ -186,7 +186,7 @@ export const mats = [
   {
     name: "Curator's Hood",
     startRange: "O290",
-    endRange: "Z294",
+    endRange: "AC294",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_506"
@@ -194,7 +194,7 @@ export const mats = [
   {
     name: "Ferris Wheel Turbine",
     startRange: "O302",
-    endRange: "Z306",
+    endRange: "AC306",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_507"
@@ -202,7 +202,7 @@ export const mats = [
   {
     name: "Speaker Bell",
     startRange: "O314",
-    endRange: "Z318",
+    endRange: "AC318",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_508"
@@ -210,7 +210,7 @@ export const mats = [
   {
     name: "Bear's Bolt",
     startRange: "O326",
-    endRange: "Z330",
+    endRange: "AC330",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_509"
@@ -218,7 +218,7 @@ export const mats = [
   {
     name: "Bunny Ear Cotton",
     startRange: "O338",
-    endRange: "Z342",
+    endRange: "AC342",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_552"
@@ -226,7 +226,7 @@ export const mats = [
   {
     name: "Sheep Horn",
     startRange: "O350",
-    endRange: "Z354",
+    endRange: "AC354",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_553"
@@ -234,7 +234,7 @@ export const mats = [
   {
     name: "Rooftop Balloon",
     startRange: "O362",
-    endRange: "Z366",
+    endRange: "AC366",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_554"
@@ -242,7 +242,7 @@ export const mats = [
   {
     name: "Pendulum Bob",
     startRange: "O374",
-    endRange: "Z378",
+    endRange: "AC378",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_555"
@@ -250,7 +250,7 @@ export const mats = [
   {
     name: "Babysitter's Handle",
     startRange: "O386",
-    endRange: "Z390",
+    endRange: "AC390",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_556"
@@ -258,7 +258,7 @@ export const mats = [
   {
     name: "Saintly Water Jar",
     startRange: "O398",
-    endRange: "Z402",
+    endRange: "AC402",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_557"
@@ -266,7 +266,7 @@ export const mats = [
   {
     name: "Rainbow Orb",
     startRange: "O14",
-    endRange: "Z18",
+    endRange: "AC18",
     rarity: "gold",
     type: "orbs",
     filename: "item_gift_551"
@@ -274,7 +274,7 @@ export const mats = [
   {
     name: "Flame Orb",
     startRange: "O26",
-    endRange: "Z30",
+    endRange: "AC30",
     rarity: "bronze",
     type: "orbs",
     filename: "item_gift_111"
@@ -282,7 +282,7 @@ export const mats = [
   {
     name: "Flame Orb+",
     startRange: "O38",
-    endRange: "Z42",
+    endRange: "AC42",
     rarity: "silver",
     type: "orbs",
     filename: "item_gift_112"
@@ -290,7 +290,7 @@ export const mats = [
   {
     name: "Flame Orb++",
     startRange: "O50",
-    endRange: "Z54",
+    endRange: "AC54",
     rarity: "gold",
     type: "orbs",
     filename: "item_gift_113"
@@ -298,7 +298,7 @@ export const mats = [
   {
     name: "Aqua Orb",
     startRange: "O62",
-    endRange: "Z66",
+    endRange: "AC66",
     rarity: "bronze",
     type: "orbs",
     filename: "item_gift_121"
@@ -306,7 +306,7 @@ export const mats = [
   {
     name: "Aqua Orb+",
     startRange: "O74",
-    endRange: "Z78",
+    endRange: "AC78",
     rarity: "silver",
     type: "orbs",
     filename: "item_gift_122"
@@ -314,7 +314,7 @@ export const mats = [
   {
     name: "Aqua Orb++",
     startRange: "O86",
-    endRange: "Z90",
+    endRange: "AC90",
     rarity: "gold",
     type: "orbs",
     filename: "item_gift_123"
@@ -322,7 +322,7 @@ export const mats = [
   {
     name: "Forest Orb",
     startRange: "O98",
-    endRange: "Z102",
+    endRange: "AC102",
     rarity: "bronze",
     type: "orbs",
     filename: "item_gift_131"
@@ -330,7 +330,7 @@ export const mats = [
   {
     name: "Forest Orb+",
     startRange: "O110",
-    endRange: "Z114",
+    endRange: "AC114",
     rarity: "silver",
     type: "orbs",
     filename: "item_gift_132"
@@ -338,7 +338,7 @@ export const mats = [
   {
     name: "Forest Orb++",
     startRange: "O122",
-    endRange: "Z126",
+    endRange: "AC126",
     rarity: "gold",
     type: "orbs",
     filename: "item_gift_133"
@@ -346,7 +346,7 @@ export const mats = [
   {
     name: "Light Orb",
     startRange: "O134",
-    endRange: "Z138",
+    endRange: "AC138",
     rarity: "bronze",
     type: "orbs",
     filename: "item_gift_141"
@@ -354,7 +354,7 @@ export const mats = [
   {
     name: "Light Orb+",
     startRange: "O146",
-    endRange: "Z150",
+    endRange: "AC150",
     rarity: "silver",
     type: "orbs",
     filename: "item_gift_142"
@@ -362,7 +362,7 @@ export const mats = [
   {
     name: "Light Orb++",
     startRange: "O158",
-    endRange: "Z162",
+    endRange: "AC162",
     rarity: "gold",
     type: "orbs",
     filename: "item_gift_143"
@@ -370,7 +370,7 @@ export const mats = [
   {
     name: "Dark Orb",
     startRange: "O170",
-    endRange: "Z174",
+    endRange: "AC174",
     rarity: "bronze",
     type: "orbs",
     filename: "item_gift_151"
@@ -378,7 +378,7 @@ export const mats = [
   {
     name: "Dark Orb+",
     startRange: "O182",
-    endRange: "Z186",
+    endRange: "AC186",
     rarity: "silver",
     type: "orbs",
     filename: "item_gift_152"
@@ -386,7 +386,7 @@ export const mats = [
   {
     name: "Dark Orb++",
     startRange: "O194",
-    endRange: "Z198",
+    endRange: "AC198",
     rarity: "gold",
     type: "orbs",
     filename: "item_gift_153"
@@ -394,7 +394,7 @@ export const mats = [
   {
     name: "Flame Book",
     startRange: "O14",
-    endRange: "Z18",
+    endRange: "AC18",
     rarity: "bronze",
     type: "books",
     filename: "item_gift_211"
@@ -402,7 +402,7 @@ export const mats = [
   {
     name: "Flame Book+",
     startRange: "O26",
-    endRange: "Z30",
+    endRange: "AC30",
     rarity: "silver",
     type: "books",
     filename: "item_gift_212"
@@ -410,7 +410,7 @@ export const mats = [
   {
     name: "Flame Book++",
     startRange: "O38",
-    endRange: "Z42",
+    endRange: "AC42",
     rarity: "gold",
     type: "books",
     filename: "item_gift_213"
@@ -418,7 +418,7 @@ export const mats = [
   {
     name: "Aqua Book",
     startRange: "O50",
-    endRange: "Z54",
+    endRange: "AC54",
     rarity: "bronze",
     type: "books",
     filename: "item_gift_221"
@@ -426,7 +426,7 @@ export const mats = [
   {
     name: "Aqua Book+",
     startRange: "O62",
-    endRange: "Z66",
+    endRange: "AC66",
     rarity: "silver",
     type: "books",
     filename: "item_gift_222"
@@ -434,7 +434,7 @@ export const mats = [
   {
     name: "Aqua Book++",
     startRange: "O74",
-    endRange: "Z78",
+    endRange: "AC78",
     rarity: "gold",
     type: "books",
     filename: "item_gift_223"
@@ -442,7 +442,7 @@ export const mats = [
   {
     name: "Forest Book",
     startRange: "O86",
-    endRange: "Z90",
+    endRange: "AC90",
     rarity: "bronze",
     type: "books",
     filename: "item_gift_231"
@@ -450,7 +450,7 @@ export const mats = [
   {
     name: "Forest Book+",
     startRange: "O98",
-    endRange: "Z102",
+    endRange: "AC102",
     rarity: "silver",
     type: "books",
     filename: "item_gift_232"
@@ -458,7 +458,7 @@ export const mats = [
   {
     name: "Forest Book++",
     startRange: "O110",
-    endRange: "Z114",
+    endRange: "AC114",
     rarity: "gold",
     type: "books",
     filename: "item_gift_233"
@@ -466,7 +466,7 @@ export const mats = [
   {
     name: "Light Book",
     startRange: "O122",
-    endRange: "Z126",
+    endRange: "AC126",
     rarity: "bronze",
     type: "books",
     filename: "item_gift_241"
@@ -474,7 +474,7 @@ export const mats = [
   {
     name: "Light Book+",
     startRange: "O134",
-    endRange: "Z138",
+    endRange: "AC138",
     rarity: "silver",
     type: "books",
     filename: "item_gift_242"
@@ -482,7 +482,7 @@ export const mats = [
   {
     name: "Light Book++",
     startRange: "O146",
-    endRange: "Z150",
+    endRange: "AC150",
     rarity: "gold",
     type: "books",
     filename: "item_gift_243"
@@ -490,7 +490,7 @@ export const mats = [
   {
     name: "Dark Book",
     startRange: "O158",
-    endRange: "Z162",
+    endRange: "AC162",
     rarity: "bronze",
     type: "books",
     filename: "item_gift_251"
@@ -498,7 +498,7 @@ export const mats = [
   {
     name: "Dark Book+",
     startRange: "O170",
-    endRange: "Z174",
+    endRange: "AC174",
     rarity: "silver",
     type: "books",
     filename: "item_gift_252"
@@ -506,7 +506,7 @@ export const mats = [
   {
     name: "Dark Book++",
     startRange: "O182",
-    endRange: "Z186",
+    endRange: "AC186",
     rarity: "gold",
     type: "books",
     filename: "item_gift_253"
@@ -514,7 +514,7 @@ export const mats = [
   {
     name: "Flame Gem",
     startRange: "O14",
-    endRange: "Z18",
+    endRange: "AC18",
     rarity: "bronze",
     type: "gems",
     filename: "item_gift_011"
@@ -522,7 +522,7 @@ export const mats = [
   {
     name: "Flame Gem+",
     startRange: "O26",
-    endRange: "Z30",
+    endRange: "AC30",
     rarity: "silver",
     type: "gems",
     filename: "item_gift_012"
@@ -530,7 +530,7 @@ export const mats = [
   {
     name: "Flame Gem++",
     startRange: "O38",
-    endRange: "Z42",
+    endRange: "AC42",
     rarity: "gold",
     type: "gems",
     filename: "item_gift_013"
@@ -538,7 +538,7 @@ export const mats = [
   {
     name: "Aqua Gem",
     startRange: "O50",
-    endRange: "Z54",
+    endRange: "AC54",
     rarity: "bronze",
     type: "gems",
     filename: "item_gift_021"
@@ -546,7 +546,7 @@ export const mats = [
   {
     name: "Aqua Gem+",
     startRange: "O62",
-    endRange: "Z66",
+    endRange: "AC66",
     rarity: "silver",
     type: "gems",
     filename: "item_gift_022"
@@ -554,7 +554,7 @@ export const mats = [
   {
     name: "Aqua Gem++",
     startRange: "O74",
-    endRange: "Z78",
+    endRange: "AC78",
     rarity: "gold",
     type: "gems",
     filename: "item_gift_023"
@@ -562,7 +562,7 @@ export const mats = [
   {
     name: "Forest Gem",
     startRange: "O86",
-    endRange: "Z90",
+    endRange: "AC90",
     rarity: "bronze",
     type: "gems",
     filename: "item_gift_031"
@@ -570,7 +570,7 @@ export const mats = [
   {
     name: "Forest Gem+",
     startRange: "O98",
-    endRange: "Z102",
+    endRange: "AC102",
     rarity: "silver",
     type: "gems",
     filename: "item_gift_032"
@@ -578,7 +578,7 @@ export const mats = [
   {
     name: "Forest Gem++",
     startRange: "O110",
-    endRange: "Z114",
+    endRange: "AC114",
     rarity: "gold",
     type: "gems",
     filename: "item_gift_033"
@@ -586,7 +586,7 @@ export const mats = [
   {
     name: "Light Gem",
     startRange: "O122",
-    endRange: "Z126",
+    endRange: "AC126",
     rarity: "bronze",
     type: "gems",
     filename: "item_gift_041"
@@ -594,7 +594,7 @@ export const mats = [
   {
     name: "Light Gem+",
     startRange: "O134",
-    endRange: "Z138",
+    endRange: "AC138",
     rarity: "silver",
     type: "gems",
     filename: "item_gift_042"
@@ -602,7 +602,7 @@ export const mats = [
   {
     name: "Light Gem++",
     startRange: "O146",
-    endRange: "Z150",
+    endRange: "AC150",
     rarity: "gold",
     type: "gems",
     filename: "item_gift_043"
@@ -610,7 +610,7 @@ export const mats = [
   {
     name: "Dark Gem",
     startRange: "O158",
-    endRange: "Z162",
+    endRange: "AC162",
     rarity: "bronze",
     type: "gems",
     filename: "item_gift_051"
@@ -618,7 +618,7 @@ export const mats = [
   {
     name: "Dark Gem+",
     startRange: "O170",
-    endRange: "Z174",
+    endRange: "AC174",
     rarity: "silver",
     type: "gems",
     filename: "item_gift_052"
@@ -626,7 +626,7 @@ export const mats = [
   {
     name: "Dark Gem++",
     startRange: "O182",
-    endRange: "Z186",
+    endRange: "AC186",
     rarity: "gold",
     type: "gems",
     filename: "item_gift_053"
