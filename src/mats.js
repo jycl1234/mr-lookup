@@ -272,6 +272,126 @@ export const mats = [
     filename: "item_gift_551"
   },
   {
+    name: "Flame Orb",
+    startRange: "O26",
+    endRange: "Z30",
+    rarity: "bronze",
+    type: "orbs",
+    filename: "item_gift_111"
+  },
+  {
+    name: "Flame Orb+",
+    startRange: "O38",
+    endRange: "Z42",
+    rarity: "silver",
+    type: "orbs",
+    filename: "item_gift_112"
+  },
+  {
+    name: "Flame Orb++",
+    startRange: "O50",
+    endRange: "Z54",
+    rarity: "gold",
+    type: "orbs",
+    filename: "item_gift_113"
+  },
+  {
+    name: "Aqua Orb",
+    startRange: "O62",
+    endRange: "Z66",
+    rarity: "bronze",
+    type: "orbs",
+    filename: "item_gift_121"
+  },
+  {
+    name: "Aqua Orb+",
+    startRange: "O74",
+    endRange: "Z78",
+    rarity: "silver",
+    type: "orbs",
+    filename: "item_gift_122"
+  },
+  {
+    name: "Aqua Orb++",
+    startRange: "O86",
+    endRange: "Z90",
+    rarity: "gold",
+    type: "orbs",
+    filename: "item_gift_123"
+  },
+  {
+    name: "Forest Orb",
+    startRange: "O98",
+    endRange: "Z102",
+    rarity: "bronze",
+    type: "orbs",
+    filename: "item_gift_131"
+  },
+  {
+    name: "Forest Orb+",
+    startRange: "O110",
+    endRange: "Z114",
+    rarity: "silver",
+    type: "orbs",
+    filename: "item_gift_132"
+  },
+  {
+    name: "Forest Orb++",
+    startRange: "O122",
+    endRange: "Z126",
+    rarity: "gold",
+    type: "orbs",
+    filename: "item_gift_133"
+  },
+  {
+    name: "Light Orb",
+    startRange: "O134",
+    endRange: "Z138",
+    rarity: "bronze",
+    type: "orbs",
+    filename: "item_gift_141"
+  },
+  {
+    name: "Light Orb+",
+    startRange: "O146",
+    endRange: "Z150",
+    rarity: "silver",
+    type: "orbs",
+    filename: "item_gift_142"
+  },
+  {
+    name: "Light Orb++",
+    startRange: "O158",
+    endRange: "Z162",
+    rarity: "gold",
+    type: "orbs",
+    filename: "item_gift_143"
+  },
+  {
+    name: "Dark Orb",
+    startRange: "O170",
+    endRange: "Z174",
+    rarity: "bronze",
+    type: "orbs",
+    filename: "item_gift_151"
+  },
+  {
+    name: "Dark Orb+",
+    startRange: "O182",
+    endRange: "Z186",
+    rarity: "silver",
+    type: "orbs",
+    filename: "item_gift_152"
+  },
+  {
+    name: "Dark Orb++",
+    startRange: "O194",
+    endRange: "Z198",
+    rarity: "gold",
+    type: "orbs",
+    filename: "item_gift_153"
+  },
+  {
     name: "Flame Book",
     startRange: "O14",
     endRange: "Z18",
@@ -280,11 +400,235 @@ export const mats = [
     filename: "item_gift_211"
   },
   {
+    name: "Flame Book+",
+    startRange: "O26",
+    endRange: "Z30",
+    rarity: "silver",
+    type: "books",
+    filename: "item_gift_212"
+  },
+  {
+    name: "Flame Book++",
+    startRange: "O38",
+    endRange: "Z42",
+    rarity: "gold",
+    type: "books",
+    filename: "item_gift_213"
+  },
+  {
+    name: "Aqua Book",
+    startRange: "O50",
+    endRange: "Z54",
+    rarity: "bronze",
+    type: "books",
+    filename: "item_gift_221"
+  },
+  {
+    name: "Aqua Book+",
+    startRange: "O62",
+    endRange: "Z66",
+    rarity: "silver",
+    type: "books",
+    filename: "item_gift_222"
+  },
+  {
+    name: "Aqua Book++",
+    startRange: "O74",
+    endRange: "Z78",
+    rarity: "gold",
+    type: "books",
+    filename: "item_gift_223"
+  },
+  {
+    name: "Forest Book",
+    startRange: "O86",
+    endRange: "Z90",
+    rarity: "bronze",
+    type: "books",
+    filename: "item_gift_231"
+  },
+  {
+    name: "Forest Book+",
+    startRange: "O98",
+    endRange: "Z102",
+    rarity: "silver",
+    type: "books",
+    filename: "item_gift_232"
+  },
+  {
+    name: "Forest Book++",
+    startRange: "O110",
+    endRange: "Z114",
+    rarity: "gold",
+    type: "books",
+    filename: "item_gift_233"
+  },
+  {
+    name: "Light Book",
+    startRange: "O122",
+    endRange: "Z126",
+    rarity: "bronze",
+    type: "books",
+    filename: "item_gift_241"
+  },
+  {
+    name: "Light Book+",
+    startRange: "O134",
+    endRange: "Z138",
+    rarity: "silver",
+    type: "books",
+    filename: "item_gift_242"
+  },
+  {
+    name: "Light Book++",
+    startRange: "O146",
+    endRange: "Z150",
+    rarity: "gold",
+    type: "books",
+    filename: "item_gift_243"
+  },
+  {
+    name: "Dark Book",
+    startRange: "O158",
+    endRange: "Z162",
+    rarity: "bronze",
+    type: "books",
+    filename: "item_gift_251"
+  },
+  {
+    name: "Dark Book+",
+    startRange: "O170",
+    endRange: "Z174",
+    rarity: "silver",
+    type: "books",
+    filename: "item_gift_252"
+  },
+  {
+    name: "Dark Book++",
+    startRange: "O182",
+    endRange: "Z186",
+    rarity: "gold",
+    type: "books",
+    filename: "item_gift_253"
+  },
+  {
     name: "Flame Gem",
     startRange: "O14",
     endRange: "Z18",
     rarity: "bronze",
     type: "gems",
-    filename: "Flame_Gem"
+    filename: "item_gift_011"
+  },
+  {
+    name: "Flame Gem+",
+    startRange: "O26",
+    endRange: "Z30",
+    rarity: "silver",
+    type: "gems",
+    filename: "item_gift_012"
+  },
+  {
+    name: "Flame Gem++",
+    startRange: "O38",
+    endRange: "Z42",
+    rarity: "gold",
+    type: "gems",
+    filename: "item_gift_013"
+  },
+  {
+    name: "Aqua Gem",
+    startRange: "O50",
+    endRange: "Z54",
+    rarity: "bronze",
+    type: "gems",
+    filename: "item_gift_021"
+  },
+  {
+    name: "Aqua Gem+",
+    startRange: "O62",
+    endRange: "Z66",
+    rarity: "silver",
+    type: "gems",
+    filename: "item_gift_022"
+  },
+  {
+    name: "Aqua Gem++",
+    startRange: "O74",
+    endRange: "Z78",
+    rarity: "gold",
+    type: "gems",
+    filename: "item_gift_023"
+  },
+  {
+    name: "Forest Gem",
+    startRange: "O86",
+    endRange: "Z90",
+    rarity: "bronze",
+    type: "gems",
+    filename: "item_gift_031"
+  },
+  {
+    name: "Forest Gem+",
+    startRange: "O98",
+    endRange: "Z102",
+    rarity: "silver",
+    type: "gems",
+    filename: "item_gift_032"
+  },
+  {
+    name: "Forest Gem++",
+    startRange: "O110",
+    endRange: "Z114",
+    rarity: "gold",
+    type: "gems",
+    filename: "item_gift_033"
+  },
+  {
+    name: "Light Gem",
+    startRange: "O122",
+    endRange: "Z126",
+    rarity: "bronze",
+    type: "gems",
+    filename: "item_gift_041"
+  },
+  {
+    name: "Light Gem+",
+    startRange: "O134",
+    endRange: "Z138",
+    rarity: "silver",
+    type: "gems",
+    filename: "item_gift_042"
+  },
+  {
+    name: "Light Gem++",
+    startRange: "O146",
+    endRange: "Z150",
+    rarity: "gold",
+    type: "gems",
+    filename: "item_gift_043"
+  },
+  {
+    name: "Dark Gem",
+    startRange: "O158",
+    endRange: "Z162",
+    rarity: "bronze",
+    type: "gems",
+    filename: "item_gift_051"
+  },
+  {
+    name: "Dark Gem+",
+    startRange: "O170",
+    endRange: "Z174",
+    rarity: "silver",
+    type: "gems",
+    filename: "item_gift_052"
+  },
+  {
+    name: "Dark Gem++",
+    startRange: "O182",
+    endRange: "Z186",
+    rarity: "gold",
+    type: "gems",
+    filename: "item_gift_053"
   }
 ];
