@@ -224,7 +224,6 @@ export default {
             mat => `${mat.startRange}:${mat.endRange}` === this.isSelected
           );
           this.selectedMatPath = this.getUrl(this.selectedMat[0]);
-          this.$emit("handle-mat-select", this.matRanges);
         } else {
           this.selectedMat = null;
           this.selectedMatPath = null;

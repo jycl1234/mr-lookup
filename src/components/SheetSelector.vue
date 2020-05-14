@@ -58,10 +58,6 @@ export default {
           'option[data-key="' + val + '"'
         ).value;
         this.sheetUrl = valueFromSearch;
-        this.$emit("handle-sheet-select", {
-          key: val,
-          value: valueFromSearch
-        });
       }
     }
   }
