@@ -19,7 +19,7 @@ import { sheetIds } from "../sheets";
 export default {
   name: "SheetSelector",
   props: {
-    savedSheetId: String
+    sheetId: String
   },
   data() {
     return {
@@ -60,7 +60,7 @@ export default {
     });
   },
   watch: {
-    savedSheetId: {
+    sheetId: {
       immediate: false,
       handler(val) {
         const selectedOption = this.$refs.sheetSelector.querySelector(
