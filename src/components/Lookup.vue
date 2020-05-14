@@ -13,7 +13,7 @@
           v-on:handle-mat-select="handleMatSelect"
           v-on:handle-mat-toggle="handleMatToggle"
           v-on:handle-trigger-reset="handleTriggerReset"
-          :savedMatRanges="savedMatRanges"
+          :matRanges="matRanges"
           :region="region"
           :isClosed="isClosed"
           :triggerReset="triggerReset"
@@ -66,7 +66,6 @@ export default {
       sheetObj: {},
       sheetId: "",
       matRanges: "",
-      savedMatRanges: "",
       isClosed: true,
       triggerReset: false,
       results: null,
@@ -98,11 +97,9 @@ export default {
     },
     handleMatSelect(matRanges) {
       if (matRanges !== "") {
-        this.savedMatRanges = matRanges;
         this.matRanges = matRanges;
         window.localStorage.setItem("matRanges", matRanges);
       } else {
-        this.savedMatRanges = "";
         this.matRanges = "";
         window.localStorage.removeItem("matRanges");
         this.isClosed = false;
@@ -157,7 +154,6 @@ export default {
       this.searchLink = null;
       this.sheetId = "843570146";
       this.matRanges = "";
-      this.savedMatRanges = "";
       this.region = "JP";
       this.errorMsg = null;
       this.isClosed = false;
@@ -173,8 +169,8 @@ export default {
     },
     handleLink() {
       this.errorMsg = null;
-      if (this.sheetId !== "" && this.savedMatRanges !== "") {
-        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.sheetId}/${this.savedMatRanges}`;
+      if (this.sheetId !== "" && this.matRanges !== "") {
+        this.searchLink = `${window.location.origin}${window.location.pathname}#${this.sheetId}/${this.matRanges}`;
       } else {
         this.errorMsg = "Please select a sheet and a mat first.";
       }
@@ -190,7 +186,6 @@ export default {
       this.sheetId = this.sheetIds.find(
         i => i.sheetUrl === this.sheetUrl
       ).sheetId;
-      this.savedMatRanges = window.localStorage.getItem("matRanges");
       if (this.sheetUrl.indexOf("JP") > -1) {
         this.region = "JP";
       } else {
@@ -204,7 +199,6 @@ export default {
       const values = path.substr(1).split("/");
       this.sheetId = values[0];
       this.matRanges = values[1];
-      this.savedMatRanges = values[1];
       setTimeout(() => {
         this.handleSubmit();
       }, 100);
