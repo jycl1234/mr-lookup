@@ -140,7 +140,7 @@ export default {
     }
     .grid--row {
       border-bottom: 1px dotted #8f8f8f;
-      margin: 0.2rem 0;
+      padding: 0 0.4rem;
       &.grid--header {
         font-weight: bold;
         display: none;
@@ -157,7 +157,7 @@ export default {
       }
       .grid--cell {
         padding: 0 0.1rem;
-        margin: 0 0 0.4rem 0;
+        margin: 0.4rem 0;
         color: #000;
         &.other {
           display: flex;
@@ -165,7 +165,7 @@ export default {
           justify-content: flex-start;
           height: 2.2rem;
           @media (min-width: 768px) {
-            display: block;
+            justify-content: center;
           }
           .responsive--header {
             width: 16.66666667%;
@@ -175,7 +175,7 @@ export default {
           color: rgba(49, 57, 93, 1);
         }
         @media (min-width: 768px) {
-          margin: 0;
+          margin: 0.2rem 0;
         }
         .responsive--header {
           font-weight: bold;
