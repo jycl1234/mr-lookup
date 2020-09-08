@@ -33,5 +33,12 @@ export const sheetIds = [
     sheetId: "120272314",
     sheetUrl: "Gems",
     sheetType: "gems"
+  },
+  {
+    title: "Fragments",
+    display: "Fragments (Best AP/Drop)",
+    sheetId: "1411106197",
+    sheetUrl: "Fragments",
+    sheetType: "fragments"
   }
 ];
