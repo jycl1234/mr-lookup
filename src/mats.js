@@ -1,264 +1,272 @@
 export const mats = [
   {
     name: "Swallowtail Feather",
-    startRange: "O14",
-    endRange: "AC18",
+    startRange: "D12",
+    endRange: "R16",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_301"
   },
   {
     name: "Mirrors Invitation",
-    startRange: "O26",
-    endRange: "AC30",
+    startRange: "D25",
+    endRange: "R29",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_302"
   },
   {
     name: "Bunny Ear Wrapping Paper",
-    startRange: "O38",
-    endRange: "AC42",
+    startRange: "D38",
+    endRange: "R42",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_303"
   },
   {
     name: "Sheep Warhorn",
-    startRange: "O50",
-    endRange: "AC54",
+    startRange: "D51",
+    endRange: "R55",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_304"
   },
   {
     name: "Rooftop Key",
-    startRange: "O62",
-    endRange: "AC66",
+    startRange: "D64",
+    endRange: "R68",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_305"
   },
   {
     name: "Pendulum Screw",
-    startRange: "O74",
-    endRange: "AC78",
+    startRange: "D77",
+    endRange: "R81",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_306"
   },
   {
     name: "Babysitter's Pedestal",
-    startRange: "O86",
-    endRange: "AC90",
+    startRange: "D90",
+    endRange: "R94",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_307"
   },
   {
     name: "Saintly Fuzzball",
-    startRange: "O98",
-    endRange: "AC102",
+    startRange: "D103",
+    endRange: "R107",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_308"
   },
   {
     name: "Rubber Swim Tube",
-    startRange: "O110",
-    endRange: "AC114",
+    startRange: "D116",
+    endRange: "R120",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_309"
   },
   {
     name: "Vagrant's Stake",
-    startRange: "O122",
-    endRange: "AC126",
+    startRange: "D129",
+    endRange: "R133",
     rarity: "bronze",
     type: "mat",
     filename: "item_gift_310"
   },
   {
     name: "Sandbox Shell",
-    startRange: "O134",
-    endRange: "AC138",
+    startRange: "D142",
+    endRange: "R146",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_401"
   },
   {
     name: "Padlock Chain",
-    startRange: "O146",
-    endRange: "AC150",
+    startRange: "D155",
+    endRange: "R159",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_402"
   },
   {
     name: "Plaque Cord",
-    startRange: "O158",
-    endRange: "AC162",
+    startRange: "D168",
+    endRange: "R172",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_403"
   },
   {
     name: "Owl Bucket",
-    startRange: "O170",
-    endRange: "AC174",
+    startRange: "D181",
+    endRange: "R185",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_404"
   },
   {
     name: "Mail Goats' Glider",
-    startRange: "O182",
-    endRange: "AC186",
+    startRange: "D194",
+    endRange: "R198",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_405"
   },
   {
     name: "Staff's Key Switch",
-    startRange: "O194",
-    endRange: "AC198",
+    startRange: "D207",
+    endRange: "R211",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_406"
   },
   {
     name: "Mascot's Mane",
-    startRange: "O206",
-    endRange: "AC210",
+    startRange: "D220",
+    endRange: "R224",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_407"
   },
   {
     name: "Bear's Scarf",
-    startRange: "O218",
-    endRange: "AC222",
+    startRange: "D233",
+    endRange: "R237",
     rarity: "silver",
     type: "mat",
     filename: "item_gift_408"
   },
   {
     name: "Sandbox Shovel",
-    startRange: "O230",
-    endRange: "AC234",
+    startRange: "D246",
+    endRange: "R250",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_501"
   },
   {
     name: "Staircase Monument",
-    startRange: "O242",
-    endRange: "AC246",
+    startRange: "D259",
+    endRange: "R263",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_502"
   },
   {
     name: "Commoner's Horse Wheel",
-    startRange: "O254",
-    endRange: "AC258",
+    startRange: "D272",
+    endRange: "R276",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_503"
   },
   {
     name: "Rhyton's Ribbon",
-    startRange: "O266",
-    endRange: "AC270",
+    startRange: "D285",
+    endRange: "R289",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_504"
   },
   {
     name: "AI Code",
-    startRange: "O278",
-    endRange: "AC282",
+    startRange: "D298",
+    endRange: "R302",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_505"
   },
   {
     name: "Curator's Hood",
-    startRange: "O290",
-    endRange: "AC294",
+    startRange: "D311",
+    endRange: "R315",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_506"
   },
   {
     name: "Ferris Wheel Turbine",
-    startRange: "O302",
-    endRange: "AC306",
+    startRange: "D324",
+    endRange: "R328",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_507"
   },
   {
     name: "Speaker Bell",
-    startRange: "O314",
-    endRange: "AC318",
+    startRange: "D337",
+    endRange: "R341",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_508"
   },
   {
     name: "Bear's Bolt",
-    startRange: "O326",
-    endRange: "AC330",
+    startRange: "D350",
+    endRange: "R354",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_509"
   },
   {
     name: "Bunny Ear Cotton",
-    startRange: "O338",
-    endRange: "AC342",
+    startRange: "D363",
+    endRange: "R367",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_552"
   },
   {
     name: "Sheep Horn",
-    startRange: "O350",
-    endRange: "AC354",
+    startRange: "D376",
+    endRange: "R380",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_553"
   },
   {
     name: "Rooftop Balloon",
-    startRange: "O362",
-    endRange: "AC366",
+    startRange: "D389",
+    endRange: "R393",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_554"
   },
   {
     name: "Pendulum Bob",
-    startRange: "O374",
-    endRange: "AC378",
+    startRange: "D402",
+    endRange: "R406",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_555"
   },
   {
     name: "Babysitter's Handle",
-    startRange: "O386",
-    endRange: "AC390",
+    startRange: "415",
+    endRange: "R419",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_556"
   },
   {
     name: "Saintly Water Jar",
-    startRange: "O398",
-    endRange: "AC402",
+    startRange: "D428",
+    endRange: "R432",
+    rarity: "gold",
+    type: "mat",
+    filename: "item_gift_557"
+  },
+  {
+    name: "Wanderer's Straw",
+    startRange: "D441",
+    endRange: "R445",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_557"
