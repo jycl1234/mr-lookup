@@ -638,5 +638,197 @@ export const mats = [
     rarity: "gold",
     type: "gems",
     filename: "item_gift_053"
+  },
+  {
+    name: "Fragment of Disgust",
+    startRange: "D12",
+    endRange: "R16",
+    rarity: "bronze",
+    type: "fragment",
+    filename: "item_gift_811"
+  },
+  {
+    name: "Fragment of Disgust+",
+    startRange: "D25",
+    endRange: "R29",
+    rarity: "silver",
+    type: "fragment",
+    filename: "item_gift_812"
+  },
+  {
+    name: "Fragment of Disgust++",
+    startRange: "D38",
+    endRange: "R42",
+    rarity: "gold",
+    type: "fragment",
+    filename: "item_gift_813"
+  },
+  {
+    name: "Fragment of Ecstasy",
+    startRange: "D51",
+    endRange: "R55",
+    rarity: "bronze",
+    type: "fragment",
+    filename: "item_gift_821"
+  },
+  {
+    name: "Fragment of Ecstasy+",
+    startRange: "D64",
+    endRange: "R68",
+    rarity: "silver",
+    type: "fragment",
+    filename: "item_gift_822"
+  },
+  {
+    name: "Fragment of Ecstasy++",
+    startRange: "D77",
+    endRange: "R81",
+    rarity: "gold",
+    type: "fragment",
+    filename: "item_gift_823"
+  },
+  {
+    name: "Fragment of Expectation",
+    startRange: "D90",
+    endRange: "R94",
+    rarity: "bronze",
+    type: "fragment",
+    filename: "item_gift_831"
+  },
+  {
+    name: "Fragment of Expectation+",
+    startRange: "D103",
+    endRange: "R107",
+    rarity: "silver",
+    type: "fragment",
+    filename: "item_gift_832"
+  },
+  {
+    name: "Fragment of Expectation++",
+    startRange: "D116",
+    endRange: "R120",
+    rarity: "gold",
+    type: "fragment",
+    filename: "item_gift_833"
+  },
+  {
+    name: "Fragment of Fear",
+    startRange: "D129",
+    endRange: "R133",
+    rarity: "bronze",
+    type: "fragment",
+    filename: "item_gift_841"
+  },
+  {
+    name: "Fragment of Fear+",
+    startRange: "D142",
+    endRange: "R146",
+    rarity: "silver",
+    type: "fragment",
+    filename: "item_gift_842"
+  },
+  {
+    name: "Fragment of Fear++",
+    startRange: "D155",
+    endRange: "R159",
+    rarity: "gold",
+    type: "fragment",
+    filename: "item_gift_843"
+  },
+  {
+    name: "Fragment of Grief",
+    startRange: "D168",
+    endRange: "R172",
+    rarity: "bronze",
+    type: "fragment",
+    filename: "item_gift_851"
+  },
+  {
+    name: "Fragment of Grief+",
+    startRange: "D181",
+    endRange: "R185",
+    rarity: "silver",
+    type: "fragment",
+    filename: "item_gift_852"
+  },
+  {
+    name: "Fragment of Grief++",
+    startRange: "D194",
+    endRange: "R198",
+    rarity: "gold",
+    type: "fragment",
+    filename: "item_gift_853"
+  },
+  {
+    name: "Fragment of Rage",
+    startRange: "D207",
+    endRange: "R211",
+    rarity: "bronze",
+    type: "fragment",
+    filename: "item_gift_861"
+  },
+  {
+    name: "Fragment of Rage+",
+    startRange: "D220",
+    endRange: "R224",
+    rarity: "silver",
+    type: "fragment",
+    filename: "item_gift_862"
+  },
+  {
+    name: "Fragment of Rage++",
+    startRange: "D233",
+    endRange: "R237",
+    rarity: "gold",
+    type: "fragment",
+    filename: "item_gift_863"
+  },
+  {
+    name: "Fragment of Respect",
+    startRange: "D246",
+    endRange: "R250",
+    rarity: "bronze",
+    type: "fragment",
+    filename: "item_gift_871"
+  },
+  {
+    name: "Fragment of Respect+",
+    startRange: "D259",
+    endRange: "R263",
+    rarity: "silver",
+    type: "fragment",
+    filename: "item_gift_872"
+  },
+  {
+    name: "Fragment of Respect++",
+    startRange: "D272",
+    endRange: "R276",
+    rarity: "gold",
+    type: "fragment",
+    filename: "item_gift_873"
+  },
+  {
+    name: "Fragment of Wonder",
+    startRange: "D285",
+    endRange: "R289",
+    rarity: "bronze",
+    type: "fragment",
+    filename: "item_gift_881"
+  },
+  {
+    name: "Fragment of Wonder+",
+    startRange: "D298",
+    endRange: "R302",
+    rarity: "silver",
+    type: "fragment",
+    filename: "item_gift_882"
+  },
+  {
+    name: "Fragment of Wonder++",
+    startRange: "D311",
+    endRange: "R315",
+    rarity: "gold",
+    type: "fragment",
+    filename: "item_gift_883"
   }
 ];
