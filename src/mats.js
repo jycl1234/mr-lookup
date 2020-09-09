@@ -269,7 +269,7 @@ export const mats = [
     endRange: "R445",
     rarity: "gold",
     type: "mat",
-    filename: "item_gift_557"
+    filename: "item_gift_559"
   },
   {
     name: "Rainbow Orb",
@@ -644,7 +644,7 @@ export const mats = [
     startRange: "D12",
     endRange: "R16",
     rarity: "bronze",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_811"
   },
   {
@@ -652,7 +652,7 @@ export const mats = [
     startRange: "D25",
     endRange: "R29",
     rarity: "silver",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_812"
   },
   {
@@ -660,7 +660,7 @@ export const mats = [
     startRange: "D38",
     endRange: "R42",
     rarity: "gold",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_813"
   },
   {
@@ -668,7 +668,7 @@ export const mats = [
     startRange: "D51",
     endRange: "R55",
     rarity: "bronze",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_821"
   },
   {
@@ -676,7 +676,7 @@ export const mats = [
     startRange: "D64",
     endRange: "R68",
     rarity: "silver",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_822"
   },
   {
@@ -684,7 +684,7 @@ export const mats = [
     startRange: "D77",
     endRange: "R81",
     rarity: "gold",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_823"
   },
   {
@@ -692,7 +692,7 @@ export const mats = [
     startRange: "D90",
     endRange: "R94",
     rarity: "bronze",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_831"
   },
   {
@@ -700,7 +700,7 @@ export const mats = [
     startRange: "D103",
     endRange: "R107",
     rarity: "silver",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_832"
   },
   {
@@ -708,7 +708,7 @@ export const mats = [
     startRange: "D116",
     endRange: "R120",
     rarity: "gold",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_833"
   },
   {
@@ -716,7 +716,7 @@ export const mats = [
     startRange: "D129",
     endRange: "R133",
     rarity: "bronze",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_841"
   },
   {
@@ -724,7 +724,7 @@ export const mats = [
     startRange: "D142",
     endRange: "R146",
     rarity: "silver",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_842"
   },
   {
@@ -732,7 +732,7 @@ export const mats = [
     startRange: "D155",
     endRange: "R159",
     rarity: "gold",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_843"
   },
   {
@@ -740,7 +740,7 @@ export const mats = [
     startRange: "D168",
     endRange: "R172",
     rarity: "bronze",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_851"
   },
   {
@@ -748,7 +748,7 @@ export const mats = [
     startRange: "D181",
     endRange: "R185",
     rarity: "silver",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_852"
   },
   {
@@ -756,7 +756,7 @@ export const mats = [
     startRange: "D194",
     endRange: "R198",
     rarity: "gold",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_853"
   },
   {
@@ -764,7 +764,7 @@ export const mats = [
     startRange: "D207",
     endRange: "R211",
     rarity: "bronze",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_861"
   },
   {
@@ -772,7 +772,7 @@ export const mats = [
     startRange: "D220",
     endRange: "R224",
     rarity: "silver",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_862"
   },
   {
@@ -780,7 +780,7 @@ export const mats = [
     startRange: "D233",
     endRange: "R237",
     rarity: "gold",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_863"
   },
   {
@@ -788,7 +788,7 @@ export const mats = [
     startRange: "D246",
     endRange: "R250",
     rarity: "bronze",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_871"
   },
   {
@@ -796,7 +796,7 @@ export const mats = [
     startRange: "D259",
     endRange: "R263",
     rarity: "silver",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_872"
   },
   {
@@ -804,7 +804,7 @@ export const mats = [
     startRange: "D272",
     endRange: "R276",
     rarity: "gold",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_873"
   },
   {
@@ -812,7 +812,7 @@ export const mats = [
     startRange: "D285",
     endRange: "R289",
     rarity: "bronze",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_881"
   },
   {
@@ -820,7 +820,7 @@ export const mats = [
     startRange: "D298",
     endRange: "R302",
     rarity: "silver",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_882"
   },
   {
@@ -828,7 +828,7 @@ export const mats = [
     startRange: "D311",
     endRange: "R315",
     rarity: "gold",
-    type: "fragment",
+    type: "fragments",
     filename: "item_gift_883"
   }
 ];
