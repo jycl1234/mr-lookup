@@ -151,11 +151,11 @@ export default {
     handleReset() {
       this.resetMatFields();
       this.searchLink = null;
-      this.sheetId = "348175085";
+      this.sheetId = "902884119";
       this.sheetType = "mat";
       this.errorMsg = null;
       this.triggerReset = true;
-      window.localStorage.setItem("sheetUrl", "Main");
+      window.localStorage.setItem("sheetUrl", "DropsByAp");
       if (this.$route.path !== "/") {
         this.$router.push("/");
       }

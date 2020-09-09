@@ -669,7 +669,7 @@ export const mats = [
     endRange: "R55",
     rarity: "bronze",
     type: "fragments",
-    filename: "item_gift_821"
+    filename: "item_gift_871"
   },
   {
     name: "Fragment of Ecstasy+",
@@ -677,7 +677,7 @@ export const mats = [
     endRange: "R68",
     rarity: "silver",
     type: "fragments",
-    filename: "item_gift_822"
+    filename: "item_gift_872"
   },
   {
     name: "Fragment of Ecstasy++",
@@ -685,7 +685,7 @@ export const mats = [
     endRange: "R81",
     rarity: "gold",
     type: "fragments",
-    filename: "item_gift_823"
+    filename: "item_gift_873"
   },
   {
     name: "Fragment of Expectation",
@@ -693,7 +693,7 @@ export const mats = [
     endRange: "R94",
     rarity: "bronze",
     type: "fragments",
-    filename: "item_gift_831"
+    filename: "item_gift_861"
   },
   {
     name: "Fragment of Expectation+",
@@ -701,7 +701,7 @@ export const mats = [
     endRange: "R107",
     rarity: "silver",
     type: "fragments",
-    filename: "item_gift_832"
+    filename: "item_gift_862"
   },
   {
     name: "Fragment of Expectation++",
@@ -709,7 +709,7 @@ export const mats = [
     endRange: "R120",
     rarity: "gold",
     type: "fragments",
-    filename: "item_gift_833"
+    filename: "item_gift_863"
   },
   {
     name: "Fragment of Fear",
@@ -741,7 +741,7 @@ export const mats = [
     endRange: "R172",
     rarity: "bronze",
     type: "fragments",
-    filename: "item_gift_851"
+    filename: "item_gift_821"
   },
   {
     name: "Fragment of Grief+",
@@ -749,7 +749,7 @@ export const mats = [
     endRange: "R185",
     rarity: "silver",
     type: "fragments",
-    filename: "item_gift_852"
+    filename: "item_gift_822"
   },
   {
     name: "Fragment of Grief++",
@@ -757,7 +757,7 @@ export const mats = [
     endRange: "R198",
     rarity: "gold",
     type: "fragments",
-    filename: "item_gift_853"
+    filename: "item_gift_823"
   },
   {
     name: "Fragment of Rage",
@@ -765,7 +765,7 @@ export const mats = [
     endRange: "R211",
     rarity: "bronze",
     type: "fragments",
-    filename: "item_gift_861"
+    filename: "item_gift_831"
   },
   {
     name: "Fragment of Rage+",
@@ -773,7 +773,7 @@ export const mats = [
     endRange: "R224",
     rarity: "silver",
     type: "fragments",
-    filename: "item_gift_862"
+    filename: "item_gift_832"
   },
   {
     name: "Fragment of Rage++",
@@ -781,7 +781,7 @@ export const mats = [
     endRange: "R237",
     rarity: "gold",
     type: "fragments",
-    filename: "item_gift_863"
+    filename: "item_gift_833"
   },
   {
     name: "Fragment of Respect",
@@ -789,7 +789,7 @@ export const mats = [
     endRange: "R250",
     rarity: "bronze",
     type: "fragments",
-    filename: "item_gift_871"
+    filename: "item_gift_881"
   },
   {
     name: "Fragment of Respect+",
@@ -797,7 +797,7 @@ export const mats = [
     endRange: "R263",
     rarity: "silver",
     type: "fragments",
-    filename: "item_gift_872"
+    filename: "item_gift_882"
   },
   {
     name: "Fragment of Respect++",
@@ -805,7 +805,7 @@ export const mats = [
     endRange: "R276",
     rarity: "gold",
     type: "fragments",
-    filename: "item_gift_873"
+    filename: "item_gift_883"
   },
   {
     name: "Fragment of Wonder",
@@ -813,7 +813,7 @@ export const mats = [
     endRange: "R289",
     rarity: "bronze",
     type: "fragments",
-    filename: "item_gift_881"
+    filename: "item_gift_851"
   },
   {
     name: "Fragment of Wonder+",
@@ -821,7 +821,7 @@ export const mats = [
     endRange: "R302",
     rarity: "silver",
     type: "fragments",
-    filename: "item_gift_882"
+    filename: "item_gift_852"
   },
   {
     name: "Fragment of Wonder++",
@@ -829,6 +829,6 @@ export const mats = [
     endRange: "R315",
     rarity: "gold",
     type: "fragments",
-    filename: "item_gift_883"
+    filename: "item_gift_853"
   }
 ];

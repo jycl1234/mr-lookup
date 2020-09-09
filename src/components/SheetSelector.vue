@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       sheetIds,
-      sheetUrl: "Main"
+      sheetUrl: "DropsByAP"
     };
   },
   methods: {
