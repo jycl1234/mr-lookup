@@ -2,7 +2,7 @@
 
 Simple web-based tool to look up Magia Record crowd-sourced dropsheet data.
 
-Dropsheet is here: https://docs.google.com/spreadsheets/d/1-ww1HSWOVqfjG4UKShcAi9dc7vkgRsMxqWBtj0vn3mY/htmlview
+Dropsheet is here: https://docs.google.com/spreadsheets/d/1lR9Sftd1LfME0i51RtDuzEm_VEXoyrrTYCqMZyKRrPE/htmlview
 
 ## How to Use
 

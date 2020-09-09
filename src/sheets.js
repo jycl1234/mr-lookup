@@ -1,37 +1,44 @@
 export const sheetIds = [
   {
-    title: "Main",
+    title: "DropsByAP",
     display: "Materials (Best AP/Drop)",
-    sheetId: "348175085",
-    sheetUrl: "Main",
+    sheetId: "902884119",
+    sheetUrl: "DropsByAP",
     sheetType: "mat"
   },
   {
-    title: "Rates",
+    title: "DropsByRate",
     display: "Materials (Best Drop Rate %)",
-    sheetId: "675601580",
-    sheetUrl: "Rates",
+    sheetId: "1469292453",
+    sheetUrl: "DropsByRate",
     sheetType: "mat"
   },
   {
     title: "Orbs",
     display: "Orbs (Best AP/Drop)",
-    sheetId: "295417020",
+    sheetId: "1823143941",
     sheetUrl: "Orbs",
     sheetType: "orbs"
   },
   {
     title: "Books",
     display: "Books (Best AP/Drop)",
-    sheetId: "1841523652",
+    sheetId: "1727607768",
     sheetUrl: "Books",
     sheetType: "books"
   },
   {
     title: "Gems",
     display: "Gems (Best AP/Drop)",
-    sheetId: "1373804106",
+    sheetId: "120272314",
     sheetUrl: "Gems",
     sheetType: "gems"
+  },
+  {
+    title: "Fragments",
+    display: "Fragments (Best AP/Drop)",
+    sheetId: "1411106197",
+    sheetUrl: "Fragments",
+    sheetType: "fragments"
   }
 ];
