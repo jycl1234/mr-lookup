@@ -249,7 +249,7 @@ export const mats = [
   },
   {
     name: "Babysitter's Handle",
-    startRange: "415",
+    startRange: "D415",
     endRange: "R419",
     rarity: "gold",
     type: "mat",
