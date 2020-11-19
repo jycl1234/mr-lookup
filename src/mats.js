@@ -264,9 +264,17 @@ export const mats = [
     filename: "item_gift_557"
   },
   {
-    name: "Wanderer's Straw",
+    name: "Rubber Flag",
     startRange: "D441",
     endRange: "R445",
+    rarity: "gold",
+    type: "mat",
+    filename: "item_gift_558"
+  },
+  {
+    name: "Wanderer's Straw",
+    startRange: "D454",
+    endRange: "R458",
     rarity: "gold",
     type: "mat",
     filename: "item_gift_559"
